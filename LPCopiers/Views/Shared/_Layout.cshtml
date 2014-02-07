@@ -2,64 +2,79 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title - LP Copiers</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @*@Styles.Render("~/Content/css")*@
         @Styles.Render("~/Content/bootstrap")
         @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/css") @*Rendered last to overwrite any predefined bootstrap css*@
     </head>
     <body>
-        <nav class="navbar navbar-default" id="nav1" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("LP Copiers", "Index", "Home", new { @class = "brand" })
+        <div id="wrap">
+            <nav class="navbar navbar-default" id="nav1" role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            @Html.ActionLink("LP Copiers", "Index", "Home", new { @class = "navbar-brand" })
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="login">
+                                <li>@Html.Partial("_LoginPartial")</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
+            </nav>
+
+
+            @*<header class="row navbar" id="navbar">
+                <a class="toggle" data-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
+                    <h1 class="four columns logo">@Html.ActionLink("LP Copiers", "Index", "Home")</h1>
+                    <div class="float-right">
+                        <section id="login">
+                            @Html.Partial("_LoginPartial")
+                        </section>
+                        <nav class="eight columns" >
+                            <ul id="menu">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </nav>
+                    </div>
+            </header>*@
+            <div class="container">
+                <div id="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @RenderSection("featured", required: false)
+                            <section class="bodyContent">
+                                @RenderBody()
+                            </section>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
 
-
-        @*<header class="row navbar" id="navbar">
-            <a class="toggle" data-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
-                <h1 class="four columns logo">@Html.ActionLink("LP Copiers", "Index", "Home")</h1>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav class="eight columns" >
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-        </header>*@
-        <div id="row">
-            <div class="eight column">
-            @RenderSection("featured", required: false)
-            <section class="eight column">
-                @RenderBody()
-            </section>
-                </div>
-        </div>
-        <footer>
-            <div class="content-wrapper">
+        </div>@*End of page wrap*@
+        <footer id="footer">
+            <div class="container">
                 <div class="row">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    <div class="col-md-12">
+                        <hr />
+                        <p class="text-muted">&copy; @DateTime.Now.Year - Robert Kingstone - s11002713</p>
+                    </div>
                 </div>
             </div>
         </footer>
