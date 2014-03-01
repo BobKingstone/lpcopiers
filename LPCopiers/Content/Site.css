@@ -1,10 +1,14 @@
 ﻿/* Sticky footer styles - bootstrap
 -------------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
 
 html,
 body {
   height: 100% !important;
   /* The html and body elements cannot have any padding or margin. */
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 /* Wrapper for page content to push down footer */
@@ -25,34 +29,183 @@ body {
 
 /* Header Styles*/
 header{
-    height:50px;
+    height: 63px;
 }
+
+.header_list li, .horizontal_list li{
+    float: left;
+}
+
+.header_list .login {
+    padding:10px;
+}
+
+.header_list .login a{
+    font-size: 1em;
+    color: #aaa;
+}
+
+.header_list .login a:hover {
+    color: #000;
+}
+
+.header_Links {
+    font-size: 1.40em;
+    color: #ccc;
+    padding: 10px;
+    border-right: 1px solid #ccc
+}
+
+.header_Links{
+    color: #aaa;
+    text-decoration: underline;
+}
+
+.header_Links:hover{
+    color: #000;
+}
+/*.github_link {
+	background: black;
+}
+.linkedIn_link {
+	background: red;
+}
+.fb_link {
+	background: blue;
+}
+.tweet_link {
+	background: blue;
+}*/
 
 .navbar 
-{
-    border-top: 0.3em solid #9702d7 ;
+{     
+    background-color: rgba(255,255,255,0.7);
 }
 
-/*featured - home page*/
-.featured{
+.navbar a {
+    text-shadow: none;
+    color: #000;
+
+}
+
+.navbar a:hover {
     color: #fff;
-    background: url(/images/officeImage.jpg) no-repeat left top fixed;
+}
+
+/*Parallax front page*/
+#parallax_one {
+    background: url(/images/officeImage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 45em;
 }
 
-.tagLine{
-    background-color: rgba(151,2,215,0.66) /*#ffd800 -orange*/;
-    margin-top:12.5em;
+.parallax .overlay{
+    background-color: rgba(6, 14, 109, 0.70);
+    height: 100%;
 }
 
-.homeServicesImg{
-    float: left;
-    margin-top: -10em;
+.darkParallax {
+    color: #fff;
+    padding-top: 5em;
 }
 
-.homeServicesImg img{
-    float: left;
+.darkParallax p {
+    padding-top: 2em;
 }
 
-/*TODO
-    Media query for smaller screens remove image in featured*/
+.darkParallax h1, .darkParallax h2 {
+    color: #fff;
+}
+
+.parallax h1 {
+    font-size: 5em;
+}
+.parallax h2 {
+
+    font-size: 3.5em;
+}
+
+/*flat design clear button*/
+.clearBtn {
+    background: none;
+    border-radius: 10px;
+    border: 2px solid #fff; 
+    padding: 10px;
+    font-size: 2em;
+    height: auto;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.clearBtn:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+/*info tags*/
+#infoTag {
+    background-color: rgba(63, 178, 24, 0.8);
+}
+#infoTag h2 {
+    color: #fff;
+    font-weight: bold;
+}
+
+/*Testimonials*/
+.testimonial {
+    margin: 3em;
+}
+
+.quote {
+    font-size: 1.5em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+.quoteMark{
+    content: '\201C';
+    font-size: 8em;
+    color: #ccc;
+    font-family: 'Times New Roman',serif;
+}
+
+.markTwo{
+    text-align: right;
+}
+
+#services {
+    background-color: #d9ddfa;
+}
+/*suppliers home page */
+#suppliers {
+    background-color: #7F0DCC;
+}
+#suppliers ul li {
+    padding: 1em;
+}
+
+/*map home page*/
+#map-canvas {
+    height: 30em;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*bottomCallout*/
+#bottomCallOut{
+    background-color: rgba(83, 217, 37, 0.90);
+    color: #fff;
+}
+
+#bottomCallOut h2{
+
+    color: #fff;
+}
+
+/*footer*/
+#footer{
+    background-color: #222;
+    color: #eee;
+}

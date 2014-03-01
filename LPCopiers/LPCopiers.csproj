@@ -199,9 +199,7 @@
     <Content Include="App_Data\LPCopiersDB_log.ldf">
       <DependentUpon>LPCopiersDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\Bootstrap\bootstrap-theme.min.css" />
-    <Content Include="Content\Bootstrap\bootstrap-original.css" />
-    <Content Include="Content\Bootstrap\bootstrap.css" />
+    <Content Include="Content\Gumby\gumby.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -258,12 +256,18 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\fonts\icons\entypo.eot" />
+    <Content Include="Content\fonts\icons\entypo.ttf" />
+    <Content Include="Content\fonts\icons\entypo.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="Images\1900x600.gif" />
-    <Content Include="Images\JPEG Logo.jpg" />
+    <Content Include="Images\LPLogoTransparent_Bg.png" />
     <Content Include="Images\officeImage.jpg" />
-    <Content Include="Images\PNG logo.png" />
+    <Content Include="Images\suppliers\canon_Logo.gif" />
+    <Content Include="Images\suppliers\epson_Logo.jpg" />
+    <Content Include="Images\suppliers\ricoh_Logo.gif" />
+    <Content Include="Images\suppliers\xerox_Logo.jpg" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Gumby\gumby.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -275,8 +279,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -317,6 +319,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_NavBarPartial.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

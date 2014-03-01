@@ -1,86 +1,115 @@
 ﻿@{
     ViewBag.Title = "LP Copiers";
 }
-@section featured {
-    <section class="featured">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-8 tagLine" >
-                    <h1>@ViewBag.Title.</h1>
-                    <h3>@ViewBag.Message</h3>
-                </div>
-            </div>
-        </div>
- 
-    </section>
-
+@section HeaderSCripts {
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script type="text/javascript">
+        function initialize() {
+            var myLatLong = new google.maps.LatLng(53.053184, -3.006527);
+            var mapOptions = {
+                center: myLatLong,
+                zoom: 12,
+                disableDefaultUI: true
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+            var marker = new google.maps.Marker({
+                position: myLatLong,
+                map: map,
+                title: 'here we are'
+            });
+            var contentString = '<div id="content">' +
+                'The local branch that serves the UK' +
+                '</div>';
+            var infoWindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infoWindow.open(map, marker);
+            })
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 }
+@section featured {
+    <section class="parallax" data-parallax="0.5" id="parallax_one" data-offset="60">
+        <div class="overlay"> @*remove at a later date and edit image*@
+            <div class="row">
+                <article class="twelve columns darkParallax text-center">
+                    <h1>@ViewBag.Title.</h1>
+                    <h2>@ViewBag.Heading</h2>
+                    <p>@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "clearBtn" })</p>
+                 </article>
+            </div>
+         </div>
+    </section>
+    <section id="infoTag">
+    <article class="row">
+        <h2 class="centered twelve columns text-center">Engineers available throughout the UK</h2>
+    </article>
+</section>
+}
 
-<div class="container">
+<section >
     <div class="row">
-        <div class="col-md-4">
-            <h3>Services</h3>
-            <p></p>
+        <div class="twelve columns text-center ">
+            <article class="testimonial">
+                <span class="quoteMark one column">&#8220;</span>
+                <p class="quote ten columns">
+                        As a fast moving business we needed someone who could fix our problems quickly while being cost effective
+                        , LP has all this covered - <span class="subhead">Henry Trutt, RT Systems</span>
+                </p>
+                <span class="quoteMark quoteMark one column">&#8221;</span>
+
+
+            </article>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container">
+<section id="services">
     <div class="row">
-        <div class="col-md-12">
-            <h3>We suggest the following:</h3>
-            <ol class="round">
-                <li class="one">
-                    <h5>Getting Started</h5>
-                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                    enables a clean separation of concerns and that gives you full control over markup
-                    for enjoyable, agile development. ASP.NET MVC includes many features that enable
-                    fast, TDD-friendly development for creating sophisticated applications that use
-                    the latest web standards.
-                    <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-                </li>
-
-                <li class="two">
-                    <h5>Add NuGet packages and jump-start your coding</h5>
-                    NuGet makes it easy to install and update free libraries and tools.
-                    <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-                </li>
-
-                <li class="three">
-                    <h5>Find Web Hosting</h5>
-                    You can easily find a web hosting company that offers the right mix of features
-                    and price for your applications.
-                    <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-                </li>
-            </ol>
-
+        <div class="six columns" >
+            <h2>What We Offer</h2>
+            <p>Uk wide service and repair of photocopier and printing equipment.</p>
+            <p>Our expert trained staff have experience with all main makes of @Html.ActionLink("learn more", "About", "Home")</a></p>
         </div>
 
+        <div class="six columns">
+            insert image service related
+        </div>
+        
     </div>
-    <h3>We suggest the following:</h3>
-    <ol class="round">
-        <li class="one">
-            <h5>Getting Started</h5>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and that gives you full control over markup
-            for enjoyable, agile development. ASP.NET MVC includes many features that enable
-            fast, TDD-friendly development for creating sophisticated applications that use
-            the latest web standards.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-        </li>
+</section>
 
-        <li class="two">
-            <h5>Add NuGet packages and jump-start your coding</h5>
-            NuGet makes it easy to install and update free libraries and tools.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-        </li>
+<section id="suppliers">
+    <div class="row">
+        <article class="centered ten columns">
+            <ul class="horizontal_list">
+                <li><img src="~/Images/suppliers/canon_Logo.gif" /></li>
+                <li><img src="~/Images/suppliers/epson_Logo.jpg" /></li>
+                <li><img src="~/Images/suppliers/ricoh_Logo.gif" /> </li>
+                <li><img src="~/Images/suppliers/xerox_Logo.jpg" /></li>
+            </ul>
+        </article>
+    </div>
+</section>
 
-        <li class="three">
-            <h5>Find Web Hosting</h5>
-            You can easily find a web hosting company that offers the right mix of features
-            and price for your applications.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-        </li>
-    </ol>
-</div>
+<section id="map">
+
+    <div id="map-canvas"></div>
+</section>
+
+<section id="bottomCallOut">
+    <div class="row">
+        <article class="six columns">
+            contact image - photocopier image?
+        </article>
+        <article class="six columns">
+            <h2>Ready to talk?</h2>
+            <p>Contact us now to discuss your needs and explore what services we can offer</p>
+            <a href="#" class="xlarge btn success">Contact Us</a>
+        </article>
+    </div>
+</section>

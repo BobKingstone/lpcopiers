@@ -10,7 +10,8 @@ namespace LPCopiers.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Providing Cost effective copier and printer solutions";
+            ViewBag.Heading = "Providing cost effective copier and printer solutions";
+
 
             return View();
         }
