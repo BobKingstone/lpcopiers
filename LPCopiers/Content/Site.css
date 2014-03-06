@@ -11,75 +11,30 @@ h1, h2, h3, h4, h5 {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-/* Wrapper for page content to push down footer */
+/*/* Wrapper for page content to push down footer
 #wrap {
   min-height: 100%;
   height: auto;
-  /* Negative indent footer by its height */
-  margin: 0 auto -60px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
+  /* Negative indent footer by its height
+  margin: 0 auto -100px;
+  /* Pad bottom by footer height
+  padding: 0 0 100px;
 }
 
-/* Set the fixed height of the footer here */
+/* Set the fixed height of the footer here
 #footer {
-  height: 60px;
+  height: 100px;
   background-color: #f5f5f5;
-}
+}*/
 
 /* Header Styles*/
 header{
     height: 63px;
 }
 
-.header_list li, .horizontal_list li{
-    float: left;
-}
-
-.header_list .login {
-    padding:10px;
-}
-
-.header_list .login a{
-    font-size: 1em;
-    color: #aaa;
-}
-
-.header_list .login a:hover {
-    color: #000;
-}
-
-.header_Links {
-    font-size: 1.40em;
-    color: #ccc;
-    padding: 10px;
-    border-right: 1px solid #ccc
-}
-
-.header_Links{
-    color: #aaa;
-    text-decoration: underline;
-}
-
-.header_Links:hover{
-    color: #000;
-}
-/*.github_link {
-	background: black;
-}
-.linkedIn_link {
-	background: red;
-}
-.fb_link {
-	background: blue;
-}
-.tweet_link {
-	background: blue;
-}*/
-
 .navbar 
 {     
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.86);
 }
 
 .navbar a {
@@ -101,7 +56,7 @@ header{
 }
 
 .parallax .overlay{
-    background-color: rgba(6, 14, 109, 0.70);
+    background-color: rgba(112, 185, 239, 0.850);
     height: 100%;
 }
 
@@ -164,7 +119,6 @@ header{
     font-weight: bold;
 }
 .quoteMark{
-    content: '\201C';
     font-size: 8em;
     color: #ccc;
     font-family: 'Times New Roman',serif;
@@ -175,14 +129,16 @@ header{
 }
 
 #services {
-    background-color: #d9ddfa;
+    background-color: rgba(238, 182, 235, 0.30);
 }
 /*suppliers home page */
 #suppliers {
-    background-color: #7F0DCC;
+    background-color: #b7b3ba;
 }
+
 #suppliers ul li {
     padding: 1em;
+    float: left;
 }
 
 /*map home page*/
@@ -195,7 +151,7 @@ header{
 
 /*bottomCallout*/
 #bottomCallOut{
-    background-color: rgba(83, 217, 37, 0.90);
+    background-color: rgba(112, 185, 239, 0.850);
     color: #fff;
 }
 
@@ -204,8 +160,50 @@ header{
     color: #fff;
 }
 
+.button_p {
+    padding-top: 30px;
+}
 /*footer*/
 #footer{
     background-color: #222;
     color: #eee;
+}
+
+.footer_list li{
+    float:right;
+}
+
+.footer_Links {
+    font-size: 1.5em;
+    padding: 0em 1em;
+    border-left: 1px solid #fff;
+    transition: all 0.5s ease;
+}
+
+.largeIcon {
+    font-size: 12em;
+}
+
+.footer_list li:first-child{
+       border-right: 1px solid #fff;
+}
+
+.footer_phone_no {
+    font-size: 1.5em;
+}
+
+#link_gplus:hover{
+    color: red;
+}
+
+#link_linked:hover{
+    color: blue;
+}
+
+#link_twitter:hover{
+    color: lightblue;
+}
+
+#link_fb:hover{
+    color: darkblue;
 }

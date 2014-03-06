@@ -9,24 +9,32 @@
             var mapOptions = {
                 center: myLatLong,
                 zoom: 12,
-                disableDefaultUI: true
+                disableDefaultUI: true,
+                scrollwheel: false
             };
             var map = new google.maps.Map(document.getElementById("map-canvas"),
                 mapOptions);
             var marker = new google.maps.Marker({
                 position: myLatLong,
                 map: map,
-                title: 'here we are'
+                title: 'here we are',
+                show: true
             });
             var contentString = '<div id="content">' +
-                'The local branch that serves the UK' +
+                '<div class="content">' +
+                        'Wrexham Main Office <br/>' +
+                        'Mold Road <br />' +
+                        '01111 123123'+
+                    '</div>' +
                 '</div>';
             var infoWindow = new google.maps.InfoWindow({
-                content: contentString
+                content: contentString,
+
             });
-            google.maps.event.addListener(marker, 'click', function () {
-                infoWindow.open(map, marker);
-            })
+            infoWindow.open(map, marker);
+            //google.maps.event.addListener(marker, 'click', function () {
+            //    infoWindow.open(map,marker);
+            //})
         }
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
@@ -34,9 +42,9 @@
 }
 @section featured {
     <section class="parallax" data-parallax="0.5" id="parallax_one" data-offset="60">
-        <div class="overlay"> @*remove at a later date and edit image*@
+        <div class="overlay">
             <div class="row">
-                <article class="twelve columns darkParallax text-center">
+                <article class="twelve columns darkParallax ">
                     <h1>@ViewBag.Title.</h1>
                     <h2>@ViewBag.Heading</h2>
                     <p>@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "clearBtn" })</p>
@@ -44,11 +52,6 @@
             </div>
          </div>
     </section>
-    <section id="infoTag">
-    <article class="row">
-        <h2 class="centered twelve columns text-center">Engineers available throughout the UK</h2>
-    </article>
-</section>
 }
 
 <section >
@@ -76,8 +79,8 @@
             <p>Our expert trained staff have experience with all main makes of @Html.ActionLink("learn more", "About", "Home")</a></p>
         </div>
 
-        <div class="six columns">
-            insert image service related
+        <div class="six columns text-center">
+            <p class="largeIcon"><i class="icon-docs"></i></p>
         </div>
         
     </div>
@@ -103,13 +106,14 @@
 
 <section id="bottomCallOut">
     <div class="row">
-        <article class="six columns">
-            contact image - photocopier image?
-        </article>
+        <article class="six columns text-center">
+            <p class="largeIcon"><i class="icon-rocket"></i></p>
+</article>
         <article class="six columns">
             <h2>Ready to talk?</h2>
             <p>Contact us now to discuss your needs and explore what services we can offer</p>
-            <a href="#" class="xlarge btn success">Contact Us</a>
+            <p class="footer_phone_no">01111 123123</p>
+            <p class="button_p"><a href="#" class="clearBtn">Contact Us</a></p>
         </article>
     </div>
 </section>
