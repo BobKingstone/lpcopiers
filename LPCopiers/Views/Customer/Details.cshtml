@@ -1,0 +1,39 @@
+﻿@model LPCopiers.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row">
+    <div class="twelve columns">
+        <h2>Details</h2>
+
+        <fieldset>
+            <legend>CustomerModel</legend>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UserId.UserName)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserId.UserName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Name)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Contact)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Contact)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

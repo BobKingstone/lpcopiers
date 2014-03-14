@@ -12,7 +12,7 @@ namespace LPCopiers.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("MainContext")
         {
         }
 
@@ -26,6 +26,7 @@ namespace LPCopiers.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+
     }
 
     public class RegisterExternalLoginModel

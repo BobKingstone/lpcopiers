@@ -18,15 +18,20 @@ namespace LPCopiers.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "LP Copiers.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Us.";
 
+            return View();
+        }
+
+        public ActionResult Services()
+        {
             return View();
         }
     }

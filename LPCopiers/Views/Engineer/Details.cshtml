@@ -1,0 +1,98 @@
+﻿@model LPCopiers.Models.Engineer
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row">
+    <div class="twelve columns">
+        <h2>Details</h2>
+
+        <fieldset>
+            <legend>Engineer</legend>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UserId)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserId)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Surname)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Surname)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Forename)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Forename)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Area)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Area)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Contact)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Contact)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Engineer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Forename)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Forename)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Area)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Area)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

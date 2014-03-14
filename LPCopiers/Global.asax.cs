@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LPCopiers.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -24,5 +26,19 @@ namespace LPCopiers
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+    }
+
+    public class MainContext : DbContext
+    {
+        public MainContext()
+        {
+            Database.SetInitializer<MainContext>(new DropCreateDatabaseIfModelChanges<MainContext>());
+
+        }
+        public DbSet<Engineer> Engineers { get; set; }
+
+        public DbSet<CustomerModel> CustomerModels { get; set; }
+
+        public DbSet<UserProfile> UserProfiles { get; set; }
     }
 }

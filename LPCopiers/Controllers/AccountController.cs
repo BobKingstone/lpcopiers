@@ -37,7 +37,24 @@ namespace LPCopiers.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                return RedirectToLocal(returnUrl);
+                //redirect depending on user role
+                if (Roles.IsUserInRole(model.UserName, "admin"))
+                {
+                    return RedirectToAction("Index","admin");
+                }
+                else if (Roles.IsUserInRole(model.UserName, "customer"))
+                {
+                    return RedirectToAction("Index", "Customers");
+                }
+                else if (Roles.IsUserInRole(model.UserName, "engineer"))
+                {
+                    return RedirectToAction("Index", "Engineers");
+                }
+                else
+                {
+                    return RedirectToLocal(returnUrl);
+                }
+                 
             }
 
             // If we got this far, something failed, redisplay form
@@ -81,7 +98,10 @@ namespace LPCopiers.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+
+                    //automatically adds users to customer role - protecting admin and engineers
+                    //Roles.AddUserToRole(model.UserName, "customer");
+                    return RedirectToAction("Index", "Customers");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -402,6 +422,7 @@ namespace LPCopiers.Controllers
                     return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
             }
         }
+
         #endregion
     }
 }
