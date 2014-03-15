@@ -13,7 +13,9 @@ namespace LPCopiers.Models
 
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ID {get; set;}
-        public int UserId {get; set;}
+        [ForeignKey("UserId")]
+        public int LoginId { get; set; }
+        public virtual UserProfile UserId { get; set; }
         public string Surname { get; set; }
         public string Forename { get; set; }
         public string Area { get; set; }

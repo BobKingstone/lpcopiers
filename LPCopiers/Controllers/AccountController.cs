@@ -97,10 +97,11 @@ namespace LPCopiers.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+
                     WebSecurity.Login(model.UserName, model.Password);
 
                     //automatically adds users to customer role - protecting admin and engineers
-                    //Roles.AddUserToRole(model.UserName, "customer");
+                    Roles.AddUserToRole(model.UserName, "customer");
                     return RedirectToAction("Index", "Customers");
                 }
                 catch (MembershipCreateUserException e)
