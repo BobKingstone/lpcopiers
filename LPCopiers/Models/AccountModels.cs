@@ -23,7 +23,7 @@ namespace LPCopiers.Models
     public class UserProfile
     {
         [Key]
-        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)] removed to allow user to create
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string surname { get; set; }
