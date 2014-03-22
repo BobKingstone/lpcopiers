@@ -2,32 +2,47 @@
 
 @using (Html.BeginForm("Manufacturers", "Home", FormMethod.Post))
 {
-    <fieldset>
-        <div class="three columns">
-            <ul>
-                <li class="danger">@Html.ValidationMessageFor(m => m.Photocopier)</li>
-                <li>@Html.RadioButtonFor(m => m.Photocopier, "Canon")Canon</li>
-                <li>@Html.RadioButtonFor(m => m.Photocopier, "Xerox")Xerox</li>
-                <li>@Html.RadioButtonFor(m => m.Photocopier, "Sharp")Sharp</li>
-            </ul>
+    <div class="row">
+        <div class="four columns">
+            <fieldset>
+                <legend>@Html.DisplayNameFor(m => m.Photocopier)</legend>
+                <ul>
+                    <li>@Html.ValidationMessageFor(m => m.Photocopier)</li>
+                    <li>@Html.RadioButtonFor(m => m.Photocopier, "Canon")Canon</li>
+                    <li>@Html.RadioButtonFor(m => m.Photocopier, "Xerox")Xerox</li>
+                    <li>@Html.RadioButtonFor(m => m.Photocopier, "Sharp")Sharp</li>
+                </ul>
+            </fieldset>
         </div>
-        <div class="three columns">
-            <ul>
-                <li class="danger">@Html.ValidationMessageFor(m => m.Printer)</li>
-                <li>@Html.RadioButtonFor(m => m.Printer, "Canon")Canon</li>
-                <li>@Html.RadioButtonFor(m => m.Printer, "Xerox")Xerox</li>
-                <li>@Html.RadioButtonFor(m => m.Printer, "Sharp")Sharp</li>
-            </ul>
+        <div class="four columns">
+            <fieldset>
+                <legend>@Html.DisplayNameFor(m => m.Printer)</legend>
+                <ul>
+                    <li>@Html.ValidationMessageFor(m => m.Printer)</li>
+                    <li>@Html.RadioButtonFor(m => m.Printer, "HP")Hewlett Packard</li>
+                    <li>@Html.RadioButtonFor(m => m.Printer, "Brother")Brother</li>
+                    <li>@Html.RadioButtonFor(m => m.Printer, "Epson")Epson</li>
+                </ul>
+            </fieldset>
         </div>
-        <div class="three columns">
-            <ul>
-                <li class="danger">@Html.ValidationMessageFor(m => m.Fax)</li>
-                <li>@Html.RadioButtonFor(m => m.Fax, "Canon")Canon</li>
-                <li>@Html.RadioButtonFor(m => m.Fax, "BT")BT</li>
-                <li>@Html.RadioButtonFor(m => m.Fax, "Sharp")Sharp</li>
-            </ul>
+        <div class="four columns">
+            <fieldset>
+                <legend>@Html.DisplayNameFor(m => m.Fax)</legend>
+                <ul>
+                    <li>@Html.ValidationMessageFor(m => m.Fax)</li>
+                    <li>@Html.RadioButtonFor(m => m.Fax, "Ricoh")Ricoh</li>
+                    <li>@Html.RadioButtonFor(m => m.Fax, "Philips")Philips</li>
+                    <li>@Html.RadioButtonFor(m => m.Fax, "Samsung")Samsung</li>
+                </ul>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <p><input type="submit" value="submit" class="large secondary btn" /></p>
         </div>
 
-        <input type="submit" value="submit" />
-    </fieldset>
+    </div>
+        
+
 }

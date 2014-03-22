@@ -1,0 +1,44 @@
+﻿@model LPCopiers.Models.Manufacture
+
+<h2><i class="icon-picture"></i>Photocopiers</h2>
+    <table class="rounded">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tr>
+            <th>@Html.DisplayFor(model => model.Photocopier)</th>
+            <th><a href="@Html.DisplayFor(model => model.CopierURL)">@Html.DisplayFor(model => model.CopierURL)</a></th>
+        </tr>
+    </table>
+
+<h2><i class="icon-print"></i>Printers</h2>
+    <table class="rounded">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tr>
+            <th>@Html.DisplayFor(model => model.Printer)</th>
+            <th><a href="@Html.DisplayFor(model => model.PrinterURL)">@Html.DisplayFor(model => model.PrinterURL)</a></th>
+        </tr>
+    </table>
+
+<h2><i class="icon-phone"></i>Fax Machines</h2>
+    <table class="rounded">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tr>
+            <th>@Html.DisplayFor(model => model.Fax)</th>
+            <th><a href="@Html.DisplayFor(model => model.FaxURL)">@Html.DisplayFor(model => model.FaxURL)</a></th>
+        </tr>
+    </table>
+

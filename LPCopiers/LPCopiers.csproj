@@ -333,6 +333,8 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Manufacturers.cshtml" />
     <Content Include="Views\Shared\_ManuForm.cshtml" />
+    <Content Include="Views\Shared\_selectedManufacturers.cshtml" />
+    <Content Include="Views\Home\SelectedManufacturers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">

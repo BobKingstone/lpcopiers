@@ -9,17 +9,8 @@
         <header class="title">
             <h1>Search Manufacturers</h1>
         </header>
-        @if (ViewBag.Selection == null)
-        {
-            Html.RenderPartial("_ManuForm");
-        }
-        else
-        {
-            foreach (var m in ViewBag.Selection)
-            {
-                <p>@m</p>
-            }
-        }
+            @{Html.RenderPartial("_ManuForm");}
+
 
     </div>
 </div>

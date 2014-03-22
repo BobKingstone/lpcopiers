@@ -16,7 +16,22 @@ namespace LPCopiers.Migrations
 
         protected override void Seed(LPCopiers.MainContext context)
         {
+            //WebSecurity.InitializeDatabaseConnection(
+            //    "MainContext",
+            //    "UserProfile",
+            //    "UserId",
+            //    "UserName", autoCreateTables: true);
 
+            //if (!Roles.RoleExists("Admin"))
+            //    Roles.CreateRole("Admin");
+
+            //if (!WebSecurity.UserExists("admin"))
+            //    WebSecurity.CreateUserAndAccount(
+            //        "admin",
+            //        "password");
+
+            //if (!Roles.GetRolesForUser("admin").Contains("Admin"))
+            //    Roles.AddUsersToRoles(new[] { "admin" }, new[] { "Admin" });
 
         }
     }
