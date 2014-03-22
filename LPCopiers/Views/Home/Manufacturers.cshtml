@@ -15,7 +15,10 @@
         }
         else
         {
-            @ViewBag.Selection
+            foreach (var m in ViewBag.Selection)
+            {
+                <p>@m</p>
+            }
         }
 
     </div>
