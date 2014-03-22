@@ -35,9 +35,6 @@ namespace LPCopiers
             Database.SetInitializer<MainContext>(new DropCreateDatabaseIfModelChanges<MainContext>());
 
         }
-        public DbSet<Engineer> Engineers { get; set; }
-
-        public DbSet<CustomerModel> CustomerModels { get; set; }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
