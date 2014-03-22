@@ -8,11 +8,11 @@ namespace LPCopiers.Models
 {
     public class Manufacture
     {
-        [Required]
+        [Required(ErrorMessage="Please Select a Photocopier")]
         public string Photocopier {  get; set;}
-        [Required]
+
         public string Printer { get; set; }
-        [Required]
+
         public string Fax { get; set; }
     }
 }

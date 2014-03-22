@@ -36,9 +36,14 @@ namespace LPCopiers.Controllers
             return View();
         }
 
+        public ActionResult Manufacturers ()
+        {
+            return View();
+        }  
+        [HttpPost]
         public ActionResult Manufacturers (Manufacture m)
         {
-            return View(m);
-        }  
+            return View();
+        }
     }
 }
