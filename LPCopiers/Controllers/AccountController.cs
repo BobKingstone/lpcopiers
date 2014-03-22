@@ -38,22 +38,8 @@ namespace LPCopiers.Controllers
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 //redirect depending on user role
-                if (Roles.IsUserInRole(model.UserName, "admin"))
-                {
-                    return RedirectToAction("Index","admin");
-                }
-                else if (Roles.IsUserInRole(model.UserName, "customer"))
-                {
-                    return RedirectToAction("Index", "Customers");
-                }
-                else if (Roles.IsUserInRole(model.UserName, "engineer"))
-                {
-                    return RedirectToAction("Index", "Engineers");
-                }
-                else
-                {
+
                     return RedirectToLocal(returnUrl);
-                }
                  
             }
 
@@ -96,13 +82,14 @@ namespace LPCopiers.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Surname= model.surname, Forename=model.forename, Area=model.area, Contact=model.contact});//model.surname, model.forename,model.area, model.contact);
 
                     WebSecurity.Login(model.UserName, model.Password);
 
+
                     //automatically adds users to customer role - protecting admin and engineers
-                    Roles.AddUserToRole(model.UserName, "customer");
-                    return RedirectToAction("Index", "Customers");
+                    Roles.AddUserToRole(model.UserName, "engineer");
+                    return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
                 {

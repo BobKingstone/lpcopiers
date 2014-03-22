@@ -29,11 +29,15 @@
                         @Html.ValidationMessageFor(m => m.Password)
                     </li>
                     <li>
-                        @Html.CheckBoxFor(m => m.RememberMe)
-                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                        <label class="checkbox" for="remeberme">
+                            <span></span>
+                            @Html.CheckBoxFor(m => m.RememberMe, new { @id = "rememberme" })
+                            Remember Me?
+                        </label>
+                        
                     </li>
                 </ol>
-                <input type="submit" value="Log in" />
+                <input type="submit" value="Log in" class="medium secondary btn" />
             </fieldset>
             <p>
                 @Html.ActionLink("Register", "Register") if you don't have an account.

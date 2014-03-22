@@ -1,0 +1,30 @@
+namespace LPCopiers.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class UserProfiles : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.UserProfile",
+                c => new
+                    {
+                        UserId = c.Int(nullable: false, identity: true),
+                        UserName = c.String(),
+                        surname = c.String(),
+                        forename = c.String(),
+                        area = c.String(),
+                        contact = c.String(),
+                    })
+                .PrimaryKey(t => t.UserId);
+            
+        }
+        
+        public override void Down()
+        {
+            DropTable("dbo.UserProfile");
+        }
+    }
+}

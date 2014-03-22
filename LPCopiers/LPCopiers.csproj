@@ -192,6 +192,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403221330483_UserProfiles.cs" />
+    <Compile Include="Migrations\201403221330483_UserProfiles.Designer.cs">
+      <DependentUpon>201403221330483_UserProfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403221436461_extras.cs" />
+    <Compile Include="Migrations\201403221436461_extras.Designer.cs">
+      <DependentUpon>201403221436461_extras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Manufacture.cs" />
@@ -326,10 +334,18 @@
     <Content Include="Views\Home\Manufacturers.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">
+      <DependentUpon>201403221330483_UserProfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403221436461_extras.resx">
+      <DependentUpon>201403221436461_extras.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

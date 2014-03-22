@@ -23,10 +23,13 @@ namespace LPCopiers.Models
     public class UserProfile
     {
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)] removed to allow user to create
         public int UserId { get; set; }
         public string UserName { get; set; }
-
+        public string surname { get; set; }
+        public string forename { get; set; }
+        public string area { get; set; }
+        public string contact { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -88,6 +91,11 @@ namespace LPCopiers.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string surname { get; set; }
+        public string forename { get; set; }
+        public string area { get; set; }
+        public string contact { get; set; }
     }
 
     public class ExternalLogin

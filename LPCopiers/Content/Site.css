@@ -4,35 +4,34 @@
 
 html,
 body {
-  height: 100% !important;
-  /* The html and body elements cannot have any padding or margin. */
+    height: 100% !important;
+    /* The html and body elements cannot have any padding or margin. */
 }
+
 h1, h2, h3, h4, h5 {
     font-family: 'Josefin Sans', sans-serif;
 }
 
- /*Wrapper for page content to push down footer*/
+/*Wrapper for page content to push down footer*/
 #wrap {
-  
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer by its height*/
-  margin: 0 auto -100px;
-  /* Pad bottom by footer height*/
-  padding: 0 0 100px;
-
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height*/
+    margin: 0 auto -100px;
+    /* Pad bottom by footer height*/
+    padding: 0 0 100px;
 }
 
 /* Set the fixed height of the footer here*/
 #footer {
-  height: 100px;
-  background-color: #f5f5f5;
+    height: 100px;
+    background-color: #f5f5f5;
 }
 
 
 /* Header Styles*/
-.title{
-    margin-top:40px;
+.title {
+    margin-top: 40px;
 }
 
 /*header{
@@ -57,12 +56,15 @@ h1, h2, h3, h4, h5 {
 /*Parallax front page*/
 #parallax_one {
     background: url(/images/officeImage.jpg);
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 45em;
+    height: 35em;
 }
 
-.parallax .overlay{
+.parallax .overlay {
     background-color: rgba(112, 185, 239, 0.850);
     height: 100%;
 }
@@ -72,19 +74,19 @@ h1, h2, h3, h4, h5 {
     padding-top: 5em;
 }
 
-.darkParallax p {
-    padding-top: 2em;
-}
+    .darkParallax p {
+        padding-top: 2em;
+    }
 
-.darkParallax h1, .darkParallax h2 {
-    color: #fff;
-}
+    .darkParallax h1, .darkParallax h2 {
+        color: #fff;
+    }
 
 .parallax h1 {
     font-size: 5em;
 }
-.parallax h2 {
 
+.parallax h2 {
     font-size: 3.5em;
 }
 
@@ -92,28 +94,32 @@ h1, h2, h3, h4, h5 {
 .clearBtn {
     background: none;
     border-radius: 10px;
-    border: 2px solid #fff; 
+    border: 2px solid #fff;
     padding: 10px;
     font-size: 2em;
     height: auto;
     color: #fff;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-.clearBtn:hover {
-    background: #fff;
-    color: #000;
-}
+    .clearBtn:hover {
+        background: #fff;
+        color: #000;
+    }
 
 
 /*info tags*/
 #infoTag {
     background-color: rgba(63, 178, 24, 0.8);
 }
-#infoTag h2 {
-    color: #fff;
-    font-weight: bold;
-}
+
+    #infoTag h2 {
+        color: #fff;
+        font-weight: bold;
+    }
 
 /*Testimonials*/
 .testimonial {
@@ -125,28 +131,29 @@ h1, h2, h3, h4, h5 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
 }
-.quoteMark{
+
+.quoteMark {
     font-size: 8em;
     color: #ccc;
     font-family: 'Times New Roman',serif;
 }
 
-.markTwo{
+.markTwo {
     text-align: right;
 }
 
 #services {
-    background-color: rgba(238, 182, 235, 0.30);
+    background-color: rgba(0, 0, 139,0.30);
 }
 /*suppliers home page */
 #suppliers {
-    background-color: #b7b3ba;
+    background-color: #6c6262;
 }
 
-#suppliers ul li {
-    padding: 1em;
-    float: left;
-}
+    #suppliers ul li {
+        padding: 1em;
+        float: left;
+    }
 
 /*map home page*/
 #map-canvas {
@@ -157,33 +164,35 @@ h1, h2, h3, h4, h5 {
 }
 
 /*bottomCallout*/
-#bottomCallOut{
+#bottomCallOut {
     background-color: rgba(112, 185, 239, 0.850);
     color: #fff;
 }
 
-#bottomCallOut h2{
-
-    color: #fff;
-}
+    #bottomCallOut h2 {
+        color: #fff;
+    }
 
 .button_p {
     padding-top: 30px;
 }
 /*master layout footer*/
-#footer{
+#footer {
     background-color: #222;
     color: #eee;
 }
 
-.footer_list li{
-    float:right;
+.footer_list li {
+    float: right;
 }
 
 .footer_Links {
     font-size: 1.5em;
     padding: 0em 1em;
     border-left: 1px solid #fff;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -191,26 +200,34 @@ h1, h2, h3, h4, h5 {
     font-size: 12em;
 }
 
-.footer_list li:first-child{
-       border-right: 1px solid #fff;
+.footer_list li:first-child {
+    border-right: 1px solid #fff;
 }
 
 .footer_phone_no {
     font-size: 1.5em;
 }
 
-#link_gplus:hover{
+#link_gplus:hover {
     color: red;
 }
 
-#link_linked:hover{
+#link_linked:hover {
     color: blue;
 }
 
-#link_twitter:hover{
+#link_twitter:hover {
     color: lightblue;
 }
 
-#link_fb:hover{
+#link_fb:hover {
     color: darkblue;
+}
+
+.btn {
+    color: #fff;
+}
+
+#logoutForm {
+    margin: 0;
 }
