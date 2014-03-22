@@ -43,6 +43,7 @@ namespace LPCopiers.Controllers
         [HttpPost]
         public ActionResult Manufacturers (Manufacture m)
         {
+            ViewBag.Selection = m.Photocopier;
             return View();
         }
     }

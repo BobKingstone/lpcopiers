@@ -1,0 +1,12 @@
+﻿@model LPCopiers.Models.Manufacture
+
+@using (Html.BeginForm("Manufacturers", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <ul>
+            <li>@Html.RadioButtonFor(m => m.Photocopier, "Canon")Canon</li>
+            <li>@Html.RadioButtonFor(m => m.Photocopier, "Xerox")Xerox</li>
+        </ul>
+        <input type="submit" value="submit" />
+    </fieldset>
+}
