@@ -1,0 +1,37 @@
+﻿@model LPCopiers.Models.WageCalculator
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>WageCalculator</legend>
+        <ul>
+            <li>
+                <strong>Do you have a BEng Certificate?</strong>
+            </li>
+            <li>
+                @Html.CheckBoxFor(model => model.Beng)
+            </li>
+        </ul>
+        <ul>
+            <li><strong>How many hours have you worked this week?</strong></li>
+            <li>@Html.EditorFor(model => model.hours)@Html.ValidationMessageFor(model => model.hours)</li>
+
+        </ul>
+
+        <ul>
+            <li><strong>@Html.LabelFor(model => model.rate)</strong></li>
+            <li>@Html.ValidationMessageFor(model => model.rate)</li>
+            <li>@Html.RadioButtonFor(model => model.rate, "Engineer")Engineer</li>
+            <li>@Html.RadioButtonFor(model => model.rate, "Senior Engineer")Senior Engineer</li>
+            <li>@Html.RadioButtonFor(model => model.rate, "Technical Engineer")Technical Engineer</li>
+            <li>@Html.RadioButtonFor(model => model.rate, "Supervisor")Supervisor</li>
+        </ul>
+
+        <p>
+            <input type="submit" value="Calculate" class="medium primary btn" />
+        </p>
+    </fieldset>
+}

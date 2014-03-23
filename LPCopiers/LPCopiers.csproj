@@ -339,6 +339,8 @@
     <Content Include="Views\Home\SelectedManufacturers.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Staff\WageCalculator.cshtml" />
+    <Content Include="Views\Shared\_WageForm.cshtml" />
+    <Content Include="Views\Staff\Wage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">

@@ -4,7 +4,7 @@
     ViewBag.Title = "WageCalculator";
 }
 <div class="row">
-    <div class="twelve columns" >
+    <div class="twelve columns">
         <header class="title">
             <h1>WageCalculator</h1>
         </header>
@@ -14,53 +14,7 @@
 </div>
 <div class="row">
     <div class="twelve columns">
-
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
-
-            <fieldset>
-                <legend>WageCalculator</legend>
-
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Beng)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Beng)
-                    @Html.ValidationMessageFor(model => model.Beng)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.hours)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.hours)
-                    @Html.ValidationMessageFor(model => model.hours)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.rate)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.rate)
-                    @Html.ValidationMessageFor(model => model.rate)
-                </div>
-
-                @*<div class="editor-label">
-                        @Html.LabelFor(model => model.wage)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.wage)
-                        @Html.ValidationMessageFor(model => model.wage)
-                    </div>*@
-
-                <p>
-                    <input type="submit" value="Calculate" class="medium primary btn"/>
-                </p>
-            </fieldset>
-        }
+        @{Html.RenderPartial("_WageForm");}
     </div>
 </div>
 

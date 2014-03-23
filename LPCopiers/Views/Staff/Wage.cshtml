@@ -1,0 +1,52 @@
+﻿@model LPCopiers.Models.WageCalculator
+@{
+    ViewBag.Title = "Wage";
+    
+}
+<div class="row">
+    <div class="eight columns">
+        <header class="title">
+            <h1>Wage</h1>
+        </header>
+        <table class="rounded">
+            <tr>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => model.Beng)</strong>
+                </td>
+                <td>
+                    @if (Model.Beng == true)
+                    {
+                        <text>
+                            Yes
+                        </text>
+                    }
+                    else
+                    {
+                        <text>
+                            No
+                        </text>
+                    }
+                </td>
+
+
+
+            </tr>
+            <tr>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => model.hours)</strong>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.hours)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.rate)</strong></td>
+                <td>@Html.DisplayFor(model => model.rate)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.wage)</strong></td>
+                <td>@Html.DisplayFor(model => model.wage)</td>
+            </tr>
+        </table>
+    </div>
+</div>

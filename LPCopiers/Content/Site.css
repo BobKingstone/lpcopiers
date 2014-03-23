@@ -34,25 +34,6 @@ h1, h2, h3, h4, h5 {
     margin-top: 40px;
 }
 
-/*header{
-    height: 63px;
-}
-
-.navbar 
-{     
-    background-color: rgba(255,255,255,0.86);
-}
-
-.navbar a {
-    text-shadow: none;
-    color: #000;
-
-}
-
-.navbar a:hover {
-    color: #fff;
-}*/
-
 /*Parallax front page*/
 #parallax_one {
     background: url(/images/officeImage.jpg);
@@ -232,33 +213,49 @@ h1, h2, h3, h4, h5 {
     margin: 0;
 }
 
-/*.field-validation-error {
-    color: #c81b1b;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    border-left: 2px solid red;
-}*/
-
 @-webkit-keyframes fade-text {
-0% {
-opacity: 0;
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
-50% {
-opacity: 1;
-}
-}
+
 @-moz-keyframes fade-text {
-0% {
-opacity: 0;
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
-50% {
-opacity: 1;
+
+@-o-keyframes fade-text {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
+@keyframes fade-text {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
+
 .field-validation-error {
     color: #c81b1b;
     -webkit-animation: fade-text 5s 1;
     -moz-animation: fade-text 5s 1;
+    -o-animation: fade-text 5s 1;
+    animation: fade-text 5s 1;
 }
