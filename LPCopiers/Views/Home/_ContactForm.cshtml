@@ -1,7 +1,9 @@
 ﻿@model LPCopiers.Models.ContactForm
 
 <script src="~/Scripts/jquery-1.8.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/globalize/globalize.js"></script>
+@*<script src="~/Scripts/jquery.validate.min.js"></script>*@
+<script src="~/Scripts/jquery.validate.globalize.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
 
@@ -121,8 +123,8 @@
             @Html.LabelFor(model => model.VisitDate)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.VisitDate, new { @id="visitDate", @placeholder="mm/dd/yyyy" })
-            @*@Html.EditorFor(model => model.VisitDate,"{0:dd/MM/yyyy}", new { @id = "visitDate" })*@
+            @*@Html.TextBoxFor(model => model.VisitDate, new { @id="visitDate", @placeholder="mm/dd/yyyy" })*@
+            @Html.EditorFor(model => model.VisitDate,"{0:dd/MM/yyyy}", new { @id = "visitDate" })
             @Html.ValidationMessageFor(model => model.VisitDate)
         </div>
 
@@ -133,9 +135,9 @@
 }
 
 <script type="text/javascript">
-    $("#visitDate").datepicker({
+    $("#VisitDate").datepicker({
         minDate: +7, maxDate: +90,
-        dateFormat: "mm/dd/yy"
+        dateFormat: "dd/mm/yy"
     });
 
     //$.validator.addMethod('date', function (value, element) {
