@@ -193,6 +193,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DateRange.cs" />
     <Compile Include="Migrations\201403221330483_UserProfiles.cs" />
     <Compile Include="Migrations\201403221330483_UserProfiles.Designer.cs">
       <DependentUpon>201403221330483_UserProfiles.cs</DependentUpon>
@@ -203,6 +204,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\Manufacture.cs" />
     <Compile Include="Models\WageCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +343,8 @@
     <Content Include="Views\Staff\WageCalculator.cshtml" />
     <Content Include="Views\Shared\_WageForm.cshtml" />
     <Content Include="Views\Staff\Wage.cshtml" />
+    <Content Include="Views\Home\_OutOfHours.cshtml" />
+    <Content Include="Views\Home\_ContactForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">

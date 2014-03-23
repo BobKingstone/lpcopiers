@@ -11,7 +11,7 @@ namespace LPCopiers.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Heading = "Providing cost effective copier and printer solutions";
+            ViewBag.Heading = "Providing cost effective copier and printer repair solutions";
 
 
             return View();
@@ -26,8 +26,23 @@ namespace LPCopiers.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contact Us.";
+            ViewBag.OutofHours = false;
+            int CurrentHour = 11;//DateTime.Now.Hour;
+            if (CurrentHour < 9 || CurrentHour > 17)
+            {
+                ViewBag.OutofHours = true;
+            }
 
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(ContactForm cf)
+        {
+            if(ModelState.IsValid)
+            {
+                return View(cf);
+            }
             return View();
         }
 
@@ -40,6 +55,7 @@ namespace LPCopiers.Controllers
         {
             return View();
         }  
+
         [HttpPost]
         public ActionResult Manufacturers (Manufacture m)
         {
