@@ -688,7 +688,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_NavBarPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
-    <Content Include="Views\extra\adminHome.cshtml" />
     <Content Include="Views\admin\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Manufacturers.cshtml" />
@@ -701,7 +700,6 @@
     <Content Include="Views\Staff\Wage.cshtml" />
     <Content Include="Views\Home\_OutOfHours.cshtml" />
     <Content Include="Views\Home\_ContactForm.cshtml" />
-    <Content Include="Views\Home\Partial1.cshtml" />
     <Content Include="Scripts\jquery.validate.globalize.min.js.map" />
   </ItemGroup>
   <ItemGroup>
