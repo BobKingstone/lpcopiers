@@ -25,11 +25,11 @@ namespace LPCopiers.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<MainContext>(null);
+                Database.SetInitializer<UsersContext>(null);
 
                 try
                 {
-                    using (var context = new MainContext())
+                    using (var context = new UsersContext())
                     {
                         if (!context.Database.Exists())
                         {

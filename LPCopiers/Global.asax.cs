@@ -28,14 +28,25 @@ namespace LPCopiers
         }
     }
 
-    public class MainContext : DbContext
-    {
-        public MainContext()
-        {
-            Database.SetInitializer<MainContext>(new DropCreateDatabaseIfModelChanges<MainContext>());
+    //public class MainContext : DbContext
+    //{
+    //    public MainContext()
+    //    {
+    //        Database.SetInitializer<MainContext>(new DropCreateDatabaseIfModelChanges<MainContext>());
 
+    //    }
+
+    //    public DbSet<UserProfile> UserProfiles { get; set; }
+    //    public DbSet<Equipment> Equipment { get; set; }
+    //}
+    public class UsersContext : DbContext
+    {
+        public UsersContext()
+            : base("MainContext")
+        {
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Equipment> Equipment { get; set; }
     }
 }

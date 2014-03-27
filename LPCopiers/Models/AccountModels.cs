@@ -9,15 +9,7 @@ using System.Web.Security;
 
 namespace LPCopiers.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("MainContext")
-        {
-        }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
 
     [Table("UserProfile")]
     public class UserProfile
@@ -31,6 +23,7 @@ namespace LPCopiers.Models
         public string forename { get; set; }
         public string area { get; set; }
         public string contact { get; set; }
+        public ICollection<Equipment> Equipment { get; set; }
     }
 
     public class RegisterExternalLoginModel

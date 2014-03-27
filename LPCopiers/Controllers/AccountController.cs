@@ -88,7 +88,7 @@ namespace LPCopiers.Controllers
 
 
                     //automatically adds users to customer role - protecting admin and engineers
-                    Roles.AddUserToRole(model.UserName, "engineer");
+                    //Roles.AddUserToRole(model.UserName, "engineer");
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

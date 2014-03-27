@@ -187,6 +187,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\adminController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -206,9 +207,14 @@
     <Compile Include="Migrations\201403270920419_add-engRef.Designer.cs">
       <DependentUpon>201403270920419_add-engRef.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403271118222_EquipmentTable.cs" />
+    <Compile Include="Migrations\201403271118222_EquipmentTable.Designer.cs">
+      <DependentUpon>201403271118222_EquipmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Manufacture.cs" />
     <Compile Include="Models\WageCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -707,6 +713,12 @@
     <Content Include="Scripts\jquery.validate.globalize.min.js.map" />
     <Content Include="Views\Staff\PartsRequest.cshtml" />
     <Content Include="Views\Staff\PartsUpload.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\Details.cshtml" />
+    <Content Include="Views\Equipment\Create.cshtml" />
+    <Content Include="Views\Equipment\Edit.cshtml" />
+    <Content Include="Views\Equipment\Delete.cshtml" />
+    <Content Include="Views\Equipment\DetailsByEngineer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">
@@ -717,6 +729,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201403270920419_add-engRef.resx">
       <DependentUpon>201403270920419_add-engRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403271118222_EquipmentTable.resx">
+      <DependentUpon>201403271118222_EquipmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
