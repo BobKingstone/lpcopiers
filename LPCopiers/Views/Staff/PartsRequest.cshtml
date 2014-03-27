@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "PartsRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header class="title">
+    <div class="row">
+        <div class="twelve columns">
+            <h1>Parts Order</h1>
+        </div>
+    </div>
+</header>
+
+<div class="row">
+    <div class="twelve columns">
+        @if (ViewBag.Message != null)
+        {
+            if (ViewBag.Error == true)
+            {
+                <p class="alert danger">@ViewBag.Message</p>
+            }
+            else
+            {
+                <p class="alert success">@ViewBag.Message</p>
+            }
+        }
+
+    </div>
+</div>
+<div class="row">
+    <div class="twelve columns">
+        @using (Html.BeginForm("PartsUpload", "Staff", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <ul>
+                <li>
+                    <label for="file">File: </label>
+                </li>
+                <li>
+                    <input type="file" name="file" value="partsUpload" id="file" accept=".xlsx"/>
+                </li>
+                <li><input type="submit" name="submit" value="Upload" /></li>
+            </ul>
+        }
+
+    </div>
+</div>
+

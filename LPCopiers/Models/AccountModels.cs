@@ -26,6 +26,7 @@ namespace LPCopiers.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string engRef { get; set; }
         public string surname { get; set; }
         public string forename { get; set; }
         public string area { get; set; }
@@ -92,6 +93,7 @@ namespace LPCopiers.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        public string engRef { get; set; }
         public string surname { get; set; }
         public string forename { get; set; }
         public string area { get; set; }

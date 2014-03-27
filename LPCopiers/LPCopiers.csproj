@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201403221436461_extras.Designer.cs">
       <DependentUpon>201403221436461_extras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403270920419_add-engRef.cs" />
+    <Compile Include="Migrations\201403270920419_add-engRef.Designer.cs">
+      <DependentUpon>201403270920419_add-engRef.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactForm.cs" />
@@ -701,6 +705,8 @@
     <Content Include="Views\Home\_OutOfHours.cshtml" />
     <Content Include="Views\Home\_ContactForm.cshtml" />
     <Content Include="Scripts\jquery.validate.globalize.min.js.map" />
+    <Content Include="Views\Staff\PartsRequest.cshtml" />
+    <Content Include="Views\Staff\PartsUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">
@@ -709,12 +715,15 @@
     <EmbeddedResource Include="Migrations\201403221436461_extras.resx">
       <DependentUpon>201403221436461_extras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403270920419_add-engRef.resx">
+      <DependentUpon>201403270920419_add-engRef.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\uploads\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,8 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
-
+//INCOMING MAIL (POP3)...: mail.uglygekko.co.uk or darcy.clook.net
+//OUTGOING MAIL (SMTP)...: mail.uglygekko.co.uk or darcy.clook.net
+//USERNAME...: username@uglygekko.co.uk (must be first created as a mailbox in cPanel control panel)
+//PASSWORD...: password for that account
+//lpcopiersSample@uglygekko.co.uk
+//ISI.JegOX.(S
 namespace LPCopiers.Controllers
 {
     public class HomeController : Controller
@@ -41,11 +47,43 @@ namespace LPCopiers.Controllers
         {
             if(ModelState.IsValid)
             {
+                var customerName = Request[cf.CName];
+                var customerEmail = Request[cf.Email];
+                var customerRequest = Request[cf.VisitDate.ToString()];
+                var errorMessage = "";
+                var debuggingFlag = false;
+                try
+                {
+                    // Initialize WebMail helper
+                    WebMail.SmtpServer = "mail.uglygekko.co.uk";
+                    WebMail.SmtpPort = 25;
+                    WebMail.UserName = "lpcopiersSample@uglygekko.co.uk";
+                    WebMail.Password = "ISI.JegOX.(S";
+                    WebMail.From = "lpcopiersSample@uglygekko.co.uk";
+
+                    // Send email
+                    WebMail.Send(to: "robert.kingstone@gmail.com",
+                        subject: "Email from - " + customerName,
+                        body: customerRequest
+                    );
+                    ViewBag.Message = "Email Sent";
+                }
+                catch (Exception ex)
+                {
+                    errorMessage = ex.Message;
+                }
                 return View(cf);
             }
+
+            ViewBag.Message = "Error";
             return View();
         }
 
+        public ActionResult ProcessContact (ContactForm cf)
+        {
+ 
+            return View();
+        }
         public ActionResult Services()
         {
             return View();
