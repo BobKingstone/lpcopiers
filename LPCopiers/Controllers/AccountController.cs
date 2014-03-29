@@ -17,6 +17,7 @@ namespace LPCopiers.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        
         //
         // GET: /Account/Login
 
@@ -38,7 +39,10 @@ namespace LPCopiers.Controllers
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 //redirect depending on user role
-
+                if(User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("Index", "../admin");
+                }
                     return RedirectToLocal(returnUrl);
                  
             }
@@ -87,8 +91,8 @@ namespace LPCopiers.Controllers
                     WebSecurity.Login(model.UserName, model.Password);
 
 
-                    //automatically adds users to customer role - protecting admin and engineers
-                    //Roles.AddUserToRole(model.UserName, "engineer");
+                    //automatically adds users to engineers role
+                    Roles.AddUserToRole(model.UserName, "engineer");
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

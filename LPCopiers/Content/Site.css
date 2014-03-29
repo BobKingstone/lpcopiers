@@ -259,3 +259,9 @@ h1, h2, h3, h4, h5 {
     -o-animation: fade-text 5s 1;
     animation: fade-text 5s 1;
 }
+
+/*miscellaneous*/
+.btn {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}

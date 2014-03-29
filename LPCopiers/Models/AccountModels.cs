@@ -17,6 +17,7 @@ namespace LPCopiers.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
+        
         public string UserName { get; set; }
         public string engRef { get; set; }
         public string surname { get; set; }

@@ -6,9 +6,11 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
         @Styles.Render("~/Content/gumby")
         @Scripts.Render("~/bundles/modernizr")
         @Styles.Render("~/Content/css") @*Rendered last to overwrite any predefined bootstrap css*@
+        <link href="~/Content/mediaQueries.css" rel="stylesheet" />
         @RenderSection("HeaderScripts", required: false)
     </head>
 

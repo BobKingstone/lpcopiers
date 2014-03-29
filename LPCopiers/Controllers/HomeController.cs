@@ -5,12 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-//INCOMING MAIL (POP3)...: mail.uglygekko.co.uk or darcy.clook.net
-//OUTGOING MAIL (SMTP)...: mail.uglygekko.co.uk or darcy.clook.net
-//USERNAME...: username@uglygekko.co.uk (must be first created as a mailbox in cPanel control panel)
-//PASSWORD...: password for that account
-//lpcopiersSample@uglygekko.co.uk
-//ISI.JegOX.(S
+
 namespace LPCopiers.Controllers
 {
     public class HomeController : Controller
@@ -51,7 +46,6 @@ namespace LPCopiers.Controllers
                 var customerEmail = Request[cf.Email];
                 var customerRequest = Request[cf.VisitDate.ToString()];
                 var errorMessage = "";
-                var debuggingFlag = false;
                 try
                 {
                     // Initialize WebMail helper

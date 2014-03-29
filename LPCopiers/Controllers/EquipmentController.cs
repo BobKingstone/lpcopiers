@@ -19,7 +19,7 @@ namespace LPCopiers.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Equipment.ToList());
+            return View(db.Equipments.ToList());
         }
 
         //
@@ -27,7 +27,7 @@ namespace LPCopiers.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Equipment equipment = db.Equipment.Find(id);
+            Equipment equipment = db.Equipments.Find(id);
             if (equipment == null)
             {
                 return HttpNotFound();
@@ -37,14 +37,22 @@ namespace LPCopiers.Controllers
 
         public ActionResult DetailsByEngineer()
         {
-            var engID = 3;//(int)WebSecurity.CurrentUserId;
-            UserProfile eng = db.UserProfiles.Find(engID);
+            if (User.IsInRole("engineer"))
+            {
+                int engID = (int)WebSecurity.CurrentUserId;
+                UserProfile eng = db.UserProfiles.Find(engID);
 
-            var Equipment = from eq in db.Equipment
-                            where eq.Engineer.UserId == engID
-                            select eq;
+                IEnumerable<Equipment> equipmentQuery =
+                    from equipment in db.Equipments
+                    where equipment.EngRef == eng.UserName
+                    select equipment;
 
-            return View(Equipment);
+
+                return View(equipmentQuery);
+            }
+
+            return RedirectToAction("index", "Staff");
+
         }
 
         //
@@ -64,7 +72,7 @@ namespace LPCopiers.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Equipment.Add(equipment);
+                db.Equipments.Add(equipment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -77,7 +85,7 @@ namespace LPCopiers.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Equipment equipment = db.Equipment.Find(id);
+            Equipment equipment = db.Equipments.Find(id);
             if (equipment == null)
             {
                 return HttpNotFound();
@@ -106,7 +114,7 @@ namespace LPCopiers.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Equipment equipment = db.Equipment.Find(id);
+            Equipment equipment = db.Equipments.Find(id);
             if (equipment == null)
             {
                 return HttpNotFound();
@@ -121,8 +129,8 @@ namespace LPCopiers.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Equipment equipment = db.Equipment.Find(id);
-            db.Equipment.Remove(equipment);
+            Equipment equipment = db.Equipments.Find(id);
+            db.Equipments.Remove(equipment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

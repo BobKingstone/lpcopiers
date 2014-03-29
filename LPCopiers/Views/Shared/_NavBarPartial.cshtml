@@ -1,15 +1,4 @@
 ﻿<header>
-    @*<div class="row">
-        <div class="push_five seven columns">
-            <ul class="header_list">
-                @Html.Partial("_LoginPartial")
-                <li class="header_Links"><i class="icon-gplus"></i></li>
-                <li class="header_Links"><i class="icon-linkedin"></i></li>
-                <li class="header_Links"><i class="icon-twitter"></i></li>
-                <li class="header_Links"><i class="icon-facebook"></i></li>
-            </ul>
-        </div>
-    </div>*@
     <nav class="navbar" id="nav1" data-fixed="top">
         <div class="row">
             <!-- Toggle for mobile navigation, targeting the <ul> -->
@@ -21,9 +10,9 @@
             </h1>
             <ul class="six columns right">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Services","Services","Home")</li>
+                @*<li>@Html.ActionLink("Services","Services","Home")</li>*@
                 <li>@Html.ActionLink("Manufacturers","Manufacturers","Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
+                @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 @Html.Partial("_LoginPartial")
             </ul>

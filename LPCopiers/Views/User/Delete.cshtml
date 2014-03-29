@@ -1,0 +1,61 @@
+﻿@model LPCopiers.Models.UserProfile
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>UserProfile</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.engRef)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.engRef)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.forename)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.forename)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.area)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.area)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contact)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

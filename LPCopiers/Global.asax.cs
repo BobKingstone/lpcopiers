@@ -47,6 +47,6 @@ namespace LPCopiers
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<Equipment> Equipment { get; set; }
+        public DbSet<Equipment> Equipments { get; set; }
     }
 }

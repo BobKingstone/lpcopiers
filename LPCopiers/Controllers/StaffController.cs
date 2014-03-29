@@ -13,6 +13,7 @@ namespace LPCopiers.Controllers
 
         public ActionResult Index()
         {
+            //check what role user is in
             return View();
         }
 
@@ -21,6 +22,11 @@ namespace LPCopiers.Controllers
             return View();
         }
 
+        /// <summary>
+        /// takes form values and calculates wage
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult WageCalculator(WageCalculator m)
         {
