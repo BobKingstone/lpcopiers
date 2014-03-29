@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+@{Html.RenderPartial("_header");}
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()

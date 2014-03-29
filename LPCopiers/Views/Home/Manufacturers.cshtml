@@ -4,12 +4,10 @@
     ViewBag.Title = "Manufacturers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{Html.RenderPartial("_header");}
 <div class="row">
     <div class="twelve columns">
-        <header class="title">
-            <h1>Search Manufacturers</h1>
-        </header>
-            @{Html.RenderPartial("_ManuForm");}
+       @{Html.RenderPartial("_ManuForm");}
     </div>
 </div>
 

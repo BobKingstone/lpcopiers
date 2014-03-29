@@ -3,9 +3,11 @@ using System;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace LPCopiers.Controllers
 {
+    [Authorize]
     public class StaffController : Controller
     {
         //
@@ -13,12 +15,14 @@ namespace LPCopiers.Controllers
 
         public ActionResult Index()
         {
-            //check what role user is in
+            //check what role user is in then display menu options
             return View();
         }
 
         public ActionResult WageCalculator()
         {
+            ViewBag.Header = "Wage Calculator";
+            ViewBag.SubHeader = "Enter details to calculate weekly wage";
             return View();
         }
 
@@ -77,8 +81,14 @@ namespace LPCopiers.Controllers
             
         }
 
+        /// <summary>
+        /// returns calculated wage if model is valid else redirects to wage calculator action
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
         public ActionResult Wage (WageCalculator m)
         {
+            ViewBag.Header = "Calculated Wage";
 
             if(ModelState.IsValid)
             {  
@@ -92,6 +102,8 @@ namespace LPCopiers.Controllers
 
         public ActionResult PartsRequest ()
         {
+            ViewBag.Header = "Parts Request";
+            ViewBag.SubHeader = "Upload Excel spreadsheet";
             if(TempData["message"] != null)
             {
                 ViewBag.Message = TempData["message"];
@@ -100,6 +112,10 @@ namespace LPCopiers.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Send file to check validity then store on server in uploads folder
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult PartsUpload()
         {
@@ -111,8 +127,19 @@ namespace LPCopiers.Controllers
                 {
                     try
                     {
+                        var fileName = "";
+                        if (User.IsInRole("engineer"))
+                        {
+                            var engRef = Membership.GetUser();
+                            fileName = engRef + DateTime.Now.ToString("ddMMyyyy");
+                        }
+                        else
+                        {
+                            fileName = "eng" + DateTime.Now.ToString("ddMMyyyy");
+                        }
+
                         //TODO:: - change engineer eng001 to current user engref
-                        var fileName = "Eng001" + DateTime.Now.ToString("ddMMyyyy");
+                        
                         var path = Path.Combine(Server.MapPath("~/App_Data/uploads/"), fileName);
                         file.SaveAs(path);
                         TempData["message"] = "File uploaded successfully";
@@ -145,6 +172,7 @@ namespace LPCopiers.Controllers
                     }
                     else
                     {
+                        //written to temp data as viewbag is cleared after redirect
                         TempData["message"] = "Incorrect type of file - file must be an Excel spreadsheet";
                         TempData["Error"] = true;
                         return false;

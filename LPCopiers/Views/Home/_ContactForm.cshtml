@@ -119,8 +119,13 @@
             @Html.LabelFor(model => model.VisitType)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VisitType)
-            @Html.ValidationMessageFor(model => model.VisitType)
+            <ul>
+                <li>@Html.RadioButtonFor(model => model.VisitType, "Sales") Sales</li>
+                <li>@Html.RadioButtonFor(model => model.VisitType, "Service") Service</li>
+                <li>@Html.RadioButtonFor(model => model.VisitType, "Repair") Repair</li>
+                <li>@Html.RadioButtonFor(model => model.VisitType, "Maintenance") Maintenance</li>
+                <li>@Html.ValidationMessageFor(model => model.VisitType)</li>
+            </ul>     
         </div>
 
         <div class="editor-label">
@@ -128,7 +133,7 @@
         </div>
         <div class="editor-field">
             @*@Html.TextBoxFor(model => model.VisitDate, new { @id="visitDate", @placeholder="mm/dd/yyyy" })*@
-            @Html.EditorFor(model => model.VisitDate,"{0:dd/MM/yyyy}", new { @id = "visitDate" })
+            @Html.EditorFor(model => model.VisitDate, "{0:dd/MM/yyyy}", new { @id = "visitDate", @placeholder = "mm/dd/yyyy" })
             @Html.ValidationMessageFor(model => model.VisitDate)
         </div>
 

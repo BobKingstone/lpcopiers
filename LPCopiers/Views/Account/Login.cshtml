@@ -3,11 +3,9 @@
 @{
     ViewBag.Title = "Log in";
 }
+@{Html.RenderPartial("_header");}
 <div class="row">
     <div class="twelve columns">
-        <header class="title">
-            <h1>@ViewBag.Title.</h1>
-        </header>
 
         <section id="loginForm">
         <h2>Use a local account to log in.</h2>
@@ -39,9 +37,6 @@
                 </ol>
                 <input type="submit" value="Log in" class="medium secondary btn" />
             </fieldset>
-            <p>
-                @Html.ActionLink("Register", "Register") if you don't have an account.
-            </p>
         }
         </section>
     </div>

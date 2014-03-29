@@ -3,15 +3,8 @@
 @{
     ViewBag.Title = "WageCalculator";
 }
-<div class="row">
-    <div class="twelve columns">
-        <header class="title">
-            <h1>WageCalculator</h1>
-        </header>
-    </div>
+@{Html.RenderPartial("_header");}
 
-
-</div>
 <div class="row">
     <div class="twelve columns">
         @{Html.RenderPartial("_WageForm");}

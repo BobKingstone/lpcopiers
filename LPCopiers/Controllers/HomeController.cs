@@ -27,11 +27,13 @@ namespace LPCopiers.Controllers
 
         public ActionResult Contact()
         {
+            ViewBag.Header = "Contact Us";
+            ViewBag.SubHeader = "Request a visit from an engineer";
             ViewBag.OutofHours = false;
-            int CurrentHour = 11;//DateTime.Now.Hour;
+            int CurrentHour = DateTime.Now.Hour;
             if (CurrentHour < 9 || CurrentHour > 17)
             {
-                ViewBag.OutofHours = true;
+                return RedirectToAction("OutOfHours");
             }
 
             return View();
@@ -42,9 +44,9 @@ namespace LPCopiers.Controllers
         {
             if(ModelState.IsValid)
             {
-                var customerName = Request[cf.CName];
-                var customerEmail = Request[cf.Email];
-                var customerRequest = Request[cf.VisitDate.ToString()];
+                var customerName = cf.CName;
+                var customerEmail = cf.Email;
+                var customerRequest = cf.VisitType;
                 var errorMessage = "";
                 try
                 {
@@ -57,34 +59,41 @@ namespace LPCopiers.Controllers
 
                     // Send email
                     WebMail.Send(to: "robert.kingstone@gmail.com",
-                        subject: "Email from - " + customerName,
-                        body: customerRequest
+                        subject: customerRequest + " Request",
+                        body: "Thank you for your email, a member of our staff will contact you shortly to confirm the date."
                     );
-                    ViewBag.Message = "Email Sent";
                 }
                 catch (Exception ex)
                 {
                     errorMessage = ex.Message;
                 }
-                return View(cf);
+                return RedirectToAction("ThankYou","Home",customerRequest);
             }
 
             ViewBag.Message = "Error";
             return View();
         }
 
-        public ActionResult ProcessContact (ContactForm cf)
+        public ActionResult ThankYou(string cr)
         {
- 
+            ViewBag.Header = "Thank you";
+            ViewBag.Request = cr;
             return View();
         }
-        public ActionResult Services()
+        public ActionResult OutOfHours ()
         {
-            return View();
+            ViewBag.Header = "Out of Hours";
+            ViewBag.SubHeader = "Our offices are currenlty closed";
+            using(UsersContext db = new UsersContext())
+            {
+                return View(db.UserProfiles.ToList());
+            }
         }
 
         public ActionResult Manufacturers ()
         {
+            ViewBag.Header = "Manufacturers";
+            ViewBag.SubHeader = "Select preferred manufactuers";
             return View();
         }  
 
@@ -126,6 +135,8 @@ namespace LPCopiers.Controllers
 
         public ActionResult SelectedManufacturers (Manufacture m)
         {
+            ViewBag.Header = "Selected Manufacturers";
+
             if(ModelState.IsValid)
                 return View(m);
 

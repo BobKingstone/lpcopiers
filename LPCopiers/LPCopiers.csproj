@@ -710,7 +710,6 @@
     <Content Include="Views\Staff\WageCalculator.cshtml" />
     <Content Include="Views\Shared\_WageForm.cshtml" />
     <Content Include="Views\Staff\Wage.cshtml" />
-    <Content Include="Views\Home\_OutOfHours.cshtml" />
     <Content Include="Views\Home\_ContactForm.cshtml" />
     <Content Include="Scripts\jquery.validate.globalize.min.js.map" />
     <Content Include="Views\Staff\PartsRequest.cshtml" />
@@ -726,6 +725,9 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\Home\ThankYou.cshtml" />
+    <Content Include="Views\Home\OutOfHours.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">

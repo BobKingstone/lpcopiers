@@ -3,12 +3,9 @@
 @{
     ViewBag.Title = "SelectedManufacturers";
 }
-
+@{Html.RenderPartial("_header");}
 <div class="row">
     <div class="twelve columns">
-        <header class="title">
-            <h1>Selected Manufacturers</h1>
-        </header>
         @{Html.RenderPartial("_selectedManufacturers");}
     </div>
 </div>

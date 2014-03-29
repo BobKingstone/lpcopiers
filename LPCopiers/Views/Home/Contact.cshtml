@@ -1,19 +1,12 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
+@{Html.RenderPartial("_header");}
 <div class="row">
     <div class="twelve columns">
-        <header class="title">
-            <h1>Contact</h1>
-        </header>
-        @if (ViewBag.OutofHours == true)
-        {
-            Html.RenderPartial("_OutofHours");
-        }
-        else
-        {
-            Html.RenderPartial("_ContactForm");
-        }
-
+        @{Html.RenderPartial("_ContactForm");}
     </div>
 </div>
+
+
+

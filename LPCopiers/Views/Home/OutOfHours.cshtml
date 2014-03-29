@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LPCopiers.Models.UserProfile>
+
+@{
+    ViewBag.Title = "OutOfHours";
+}
+@{Html.RenderPartial("_header");}
+
+<div class="row">
+    <div class="twelve columns">
+        <table class="rounded">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.forename)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.area)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.contact)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if(item.engRef != null)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.forename)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.area)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.contact)
+                        </td>
+                    </tr>                    
+                }
+
+            }
+
+        </table>
+    </div>
+</div>
+

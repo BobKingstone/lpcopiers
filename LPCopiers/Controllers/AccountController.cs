@@ -24,6 +24,8 @@ namespace LPCopiers.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            ViewBag.Header = "Login";
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -70,6 +72,8 @@ namespace LPCopiers.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Header = "Register";
+            ViewBag.SubHeader = "Register new engineer";
             return View();
         }
 
@@ -139,6 +143,8 @@ namespace LPCopiers.Controllers
 
         public ActionResult Manage(ManageMessageId? message)
         {
+            ViewBag.Header = "Manage";
+            ViewBag.SubHeader = "Change user password";
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."

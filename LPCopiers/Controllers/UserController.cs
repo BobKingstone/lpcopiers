@@ -19,6 +19,8 @@ namespace LPCopiers.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Header = "Current Users";
+
             return View(db.UserProfiles.ToList());
         }
 
@@ -27,6 +29,8 @@ namespace LPCopiers.Controllers
 
         public ActionResult Details(int id = 0)
         {
+            ViewBag.Header = "User Details";
+
             UserProfile userprofile = db.UserProfiles.Find(id);
             if (userprofile == null)
             {
@@ -37,34 +41,36 @@ namespace LPCopiers.Controllers
 
         //
         // GET: /User/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //not needed as register page will be used 
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         //
-        // POST: /User/Create
+        //// POST: /User/Create
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(UserProfile userprofile)
-        {
-            if (ModelState.IsValid)
-            {
-                db.UserProfiles.Add(userprofile);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(UserProfile userprofile)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.UserProfiles.Add(userprofile);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(userprofile);
-        }
+        //    return View(userprofile);
+        //}
 
         //
         // GET: /User/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
+            ViewBag.Header = "Edit User Details";
+
             UserProfile userprofile = db.UserProfiles.Find(id);
             if (userprofile == null)
             {
@@ -94,6 +100,8 @@ namespace LPCopiers.Controllers
 
         public ActionResult Delete(int id = 0)
         {
+            ViewBag.Header = "Delete";
+            ViewBag.SubHeader = "Delete user records";
             UserProfile userprofile = db.UserProfiles.Find(id);
             if (userprofile == null)
             {
