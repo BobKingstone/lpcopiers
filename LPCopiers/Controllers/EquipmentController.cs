@@ -80,6 +80,10 @@ namespace LPCopiers.Controllers
             {
                 db.Equipments.Add(equipment);
                 db.SaveChanges();
+                if (User.IsInRole("Engineer"))
+                {
+                    return RedirectToAction("DetailsByEngineer");
+                }
                 return RedirectToAction("Index");
             }
 
@@ -110,6 +114,10 @@ namespace LPCopiers.Controllers
             {
                 db.Entry(equipment).State = EntityState.Modified;
                 db.SaveChanges();
+                if(User.IsInRole("Engineer"))
+                {
+                    return RedirectToAction("DetailsByEngineer");
+                }
                 return RedirectToAction("Index");
             }
             return View(equipment);
@@ -140,6 +148,10 @@ namespace LPCopiers.Controllers
             Equipment equipment = db.Equipments.Find(id);
             db.Equipments.Remove(equipment);
             db.SaveChanges();
+            if (User.IsInRole("Engineer"))
+            {
+                return RedirectToAction("DetailsByEngineer");
+            }
             return RedirectToAction("Index");
         }
 

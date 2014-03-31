@@ -18,64 +18,53 @@
 
                 @Html.HiddenFor(model => model.EquipmentID)
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.EngRef)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.EngRef)
-                    @Html.ValidationMessageFor(model => model.EngRef)
-                </div>
+                <ul>
+                    <li class="field">
+                        <label for="EngRef">Engineer Reference No</label>
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.serialNo)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.serialNo)
-                    @Html.ValidationMessageFor(model => model.serialNo)
-                </div>
+                        @Html.TextBoxFor(model => model.EngRef, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.EngRef)
+                    </li>
+                    <li class="field">
+                        <label for="serialNo">Serial Number</label>
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Make)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Make)
-                    @Html.ValidationMessageFor(model => model.Make)
-                </div>
+                        @Html.TextBoxFor(model => model.serialNo, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.serialNo)
+                    </li>
+                    <li class="field">
+                        @Html.LabelFor(model => model.Make)
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Model)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Model)
-                    @Html.ValidationMessageFor(model => model.Model)
-                </div>
+                        @Html.TextBoxFor(model => model.Make, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.Make)
+                    </li>
+                    <li class="field">
+                        @Html.LabelFor(model => model.Model)
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Company)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Company)
-                    @Html.ValidationMessageFor(model => model.Company)
-                </div>
+                        @Html.TextBoxFor(model => model.Model, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.Model)
+                    </li>
+                    <li class="field">
+                        @Html.LabelFor(model => model.Company)
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Contact)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Contact)
-                    @Html.ValidationMessageFor(model => model.Contact)
-                </div>
+                        @Html.TextBoxFor(model => model.Company, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.Company)
+                    </li>
+                    <li class="field">
+                        @Html.LabelFor(model => model.Contact)
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Location)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Location)
-                    @Html.ValidationMessageFor(model => model.Location)
-                </div>
+                        @Html.TextBoxFor(model => model.Contact, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.Contact)
+                    </li>
+                    <li class="field">
+                        @Html.LabelFor(model => model.Location)
+
+                        @Html.TextBoxFor(model => model.Location, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.Location)
+                    </li>
+                </ul>
 
                 <p>
-                    <input type="submit" value="Save" />
+                    <input type="submit" value="Save" class="medium secondary btn" />
                 </p>
             </fieldset>
         }

@@ -266,7 +266,31 @@ h1, h2, h3, h4, h5 {
         opacity: 1;
     }
 }
+/*Staff Menu*/
+.side-nav{
+    text-align: left;
+    margin-top: 2em;
+}
 
+.side-nav li{
+    margin-bottom: 0.273em;
+    margin-top: 0.273em;
+}
+
+.side-nav li a{
+    background: none;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.side-nav li a:hover {
+   background: #E9E9E9;
+}
+
+
+/*custom error css*/
 .field-validation-error {
     color: #c81b1b;
     -webkit-animation: fade-text 5s 1;
@@ -274,9 +298,41 @@ h1, h2, h3, h4, h5 {
     -o-animation: fade-text 5s 1;
     animation: fade-text 5s 1;
 }
+.input-validation-error{
+    border-color: #ca3838 !important;
+    color: #ca3838;
+    background: #f0c5c5 !important;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
 
 /*miscellaneous*/
 .btn {
     padding-left: 10px !important;
     padding-right: 10px !important;
+}
+
+
+/*style switcher links*/
+#HighVisLink{
+    background-color: #000;
+    color: #edff00;
+}
+
+#HighVisLink:hover{
+    background-color: #edff00;
+    color: #000;
+}
+
+#darkLink{
+    background-color: #050483;
+    color: #fff;
+}
+
+#darkLink:hover{
+    color: #050483;
+    background-color: #fff;
 }

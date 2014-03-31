@@ -3,47 +3,40 @@
 @{
     ViewBag.Title = "OutOfHours";
 }
+
 @{Html.RenderPartial("_header");}
 
-<div class="row">
-    <div class="twelve columns">
-        <table class="rounded">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.surname)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.forename)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.area)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.contact)
-                </th>
-                <th></th>
-            </tr>
 
+<div class="row">
+    <div class="twelve columns" >
+        <h3>Please contact your local agent for out of hours service:</h3>
+        <table class="rounded">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.area)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.contact)
+                    </th>
+                </tr>
+            </thead>
             @foreach (var item in Model)
             {
-                if(item.engRef != null)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.surname)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.forename)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.area)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.contact)
-                        </td>
-                    </tr>                    
-                }
-
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.forename) @Html.DisplayFor(modelItem => item.surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.contact)
+                    </td>
+                </tr>
             }
 
         </table>

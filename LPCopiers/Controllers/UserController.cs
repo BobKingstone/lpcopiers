@@ -9,7 +9,7 @@ using LPCopiers.Models;
 
 namespace LPCopiers.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private UsersContext db = new UsersContext();

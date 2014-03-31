@@ -15,6 +15,13 @@ namespace LPCopiers.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Header = "Staff Area";
+            ViewBag.SubHeader = "Use sub menu to access relevant area";
+            if(User.IsInRole("Admin"))
+            {
+                ViewBag.Header = "Admin Area";
+                return RedirectToAction("Index", "admin");
+            }
             //check what role user is in then display menu options
             return View();
         }

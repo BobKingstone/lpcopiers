@@ -6,142 +6,119 @@
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
 
+<div class="row">
+    <div class="twelve columns" >
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            if (!ViewData.ModelState.IsValid)
+            {
+                <p class="danger alert">Please check for errors</p>
+            }
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    if (!ViewData.ModelState.IsValid)
-    { 
-       <p>Please check for errors</p>
-    }
-    @ViewBag.Message
-    
-    <fieldset>
-        <legend>Contact Form</legend>
+            <fieldset>
+                <legend>Contact Form</legend>
+                <ul>
+                    <li class="field">
+                        @Html.LabelFor(model => model.CName)
+                        @Html.TextBoxFor(model => model.CName, new { @class = " normal text input" })
+                        @Html.ValidationMessageFor(model => model.CName)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CName)
-            @Html.ValidationMessageFor(model => model.CName)
-        </div>
+                    <li class="field">
+                        <label class="checkbox" for="Customer">
+                            Existing Customer <span></span>
+                            @Html.EditorFor(model => model.Customer)
+                        </label>
+                        @Html.ValidationMessageFor(model => model.Customer)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Customer)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Customer)
-            @Html.ValidationMessageFor(model => model.Customer)
-        </div>
+                    <li class="field">
+                        @Html.LabelFor(model => model.AccountNo)
+                        @Html.TextBoxFor(model => model.AccountNo, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.AccountNo)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AccountNo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AccountNo)
-            @Html.ValidationMessageFor(model => model.AccountNo)
-        </div>
+                    <li class="field">
+                        @Html.LabelFor(model => model.CompanyURL)
+                        @Html.TextBoxFor(model => model.CompanyURL, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.CompanyURL)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CompanyURL)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CompanyURL)
-            @Html.ValidationMessageFor(model => model.CompanyURL)
-        </div>
+                    <li class="field">
+                        @Html.LabelFor(model => model.NoOfUnits)
+                        @Html.TextBoxFor(model => model.NoOfUnits, new { @class = "narrow number input" })
+                        @Html.ValidationMessageFor(model => model.NoOfUnits)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NoOfUnits)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NoOfUnits)
-            @Html.ValidationMessageFor(model => model.NoOfUnits)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.ContactTitle)
+                        @Html.TextBoxFor(model => model.ContactTitle, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.ContactTitle)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ContactTitle)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ContactTitle)
-            @Html.ValidationMessageFor(model => model.ContactTitle)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.ContactName)
+                        @Html.TextBoxFor(model => model.ContactName, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.ContactName)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ContactName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ContactName)
-            @Html.ValidationMessageFor(model => model.ContactName)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.Street)
+                        @Html.TextBoxFor(model => model.Street, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.Street)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Street)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Street)
-            @Html.ValidationMessageFor(model => model.Street)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.Town)
+                        @Html.TextBoxFor(model => model.Town, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.Town)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Town)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Town)
-            @Html.ValidationMessageFor(model => model.Town)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.PostCode)
+                        @Html.TextBoxFor(model => model.PostCode, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.PostCode)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PostCode)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PostCode)
-            @Html.ValidationMessageFor(model => model.PostCode)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.Email)
+                        @Html.TextBoxFor(model => model.Email, new { @class = "wide text input" })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
+                    <li class=" field">
+                        @Html.LabelFor(model => model.Phone)
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "narrow text input" })
+                        @Html.ValidationMessageFor(model => model.Phone)
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Phone)
-            @Html.ValidationMessageFor(model => model.Phone)
-        </div>
-        <p>Change to radio button list of types</p>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VisitType)
-        </div>
-        <div class="editor-field">
-            <ul>
-                <li>@Html.RadioButtonFor(model => model.VisitType, "Sales") Sales</li>
-                <li>@Html.RadioButtonFor(model => model.VisitType, "Service") Service</li>
-                <li>@Html.RadioButtonFor(model => model.VisitType, "Repair") Repair</li>
-                <li>@Html.RadioButtonFor(model => model.VisitType, "Maintenance") Maintenance</li>
-                <li>@Html.ValidationMessageFor(model => model.VisitType)</li>
-            </ul>     
-        </div>
+                    <li class="">
+                        @Html.LabelFor(model => model.VisitType)
+                        <ul>
+                            <li>@Html.RadioButtonFor(model => model.VisitType, "Sales") Sales</li>
+                            <li>@Html.RadioButtonFor(model => model.VisitType, "Service") Service</li>
+                            <li>@Html.RadioButtonFor(model => model.VisitType, "Repair") Repair</li>
+                            <li>@Html.RadioButtonFor(model => model.VisitType, "Maintenance") Maintenance</li>
+                            <li>@Html.ValidationMessageFor(model => model.VisitType)</li>
+                        </ul>
+                    </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VisitDate)
-        </div>
-        <div class="editor-field">
-            @*@Html.TextBoxFor(model => model.VisitDate, new { @id="visitDate", @placeholder="mm/dd/yyyy" })*@
-            @Html.EditorFor(model => model.VisitDate, "{0:dd/MM/yyyy}", new { @id = "visitDate", @placeholder = "mm/dd/yyyy" })
-            @Html.ValidationMessageFor(model => model.VisitDate)
-        </div>
-
-        <p>
-            <input type="submit" value="Submit" class="medium success btn" />
-        </p>
-    </fieldset>
-}
+                    <li class=" field">
+                        @Html.LabelFor(model => model.VisitDate)
+                        @*@Html.TextBoxFor(model => model.VisitDate, new { @id="visitDate", @placeholder="mm/dd/yyyy" })*@
+                        @Html.TextBoxFor(model => model.VisitDate, "{0:dd/MM/yyyy}", new { @id = "visitDate", @placeholder = "mm/dd/yyyy", @class = " narrow text input" })
+                        @Html.ValidationMessageFor(model => model.VisitDate)
+                    </li>
+                </ul>
+                <p>
+                    <input type="submit" value="Submit" class="medium success btn" />
+                </p>
+            </fieldset>
+        }
+    </div>
+</div>
 
 <script type="text/javascript">
     $("#VisitDate").datepicker({

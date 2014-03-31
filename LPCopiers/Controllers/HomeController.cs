@@ -86,7 +86,12 @@ namespace LPCopiers.Controllers
             ViewBag.SubHeader = "Our offices are currenlty closed";
             using(UsersContext db = new UsersContext())
             {
-                return View(db.UserProfiles.ToList());
+                   
+                IEnumerable<UserProfile> users = (from UserProfiles in db.UserProfiles
+                                                    where UserProfiles.forename != ""
+                                                    select UserProfiles).ToList();
+                
+                return View(users);
             }
         }
 

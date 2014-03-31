@@ -221,6 +221,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Accessability\darkBackground.css" />
+    <Content Include="Content\Accessability\HighContrast.css" />
+    <Content Include="Content\Accessability\standard.css" />
     <Content Include="Content\Gumby\gumby.css" />
     <Content Include="Content\mediaQueries.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -644,12 +647,15 @@
     <Content Include="Scripts\globalize\cultures\globalize.culture.zu.js" />
     <Content Include="Scripts\globalize\cultures\globalize.cultures.js" />
     <Content Include="Scripts\globalize\globalize.js" />
+    <Content Include="Scripts\Graphs\Chart.min.js" />
+    <Content Include="Scripts\Graphs\GraphsData.js" />
     <Content Include="Scripts\Gumby\gumby.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.globalize.js" />
@@ -659,6 +665,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\StylesheetChanger.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -726,8 +733,10 @@
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
     <Content Include="Views\Home\ThankYou.cshtml" />
-    <Content Include="Views\Home\OutOfHours.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Staff\_engineerMenu.cshtml" />
+    <Content Include="Views\admin\_AdminMenu.cshtml" />
+    <Content Include="Views\Home\OutOfHours.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">
