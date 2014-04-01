@@ -1,0 +1,53 @@
+﻿body {
+    background-color: #4fb9ff;
+}
+
+.title{
+    background-color: #1d1bd9;
+    color: #000;
+}
+
+
+.parallax .overlay{
+    background-color: rgba(79, 185, 255, 0.7);
+}
+
+.darkParallax h1, .darkParallax h2, .darkParallax .clearBtn{
+    color: #000;
+}
+
+.quoteMark{
+    color: #000;
+}
+
+.subhead {
+    color: #000;
+}
+
+.btn.secondary{
+    background: #000;
+    color: #fffc78;
+}
+#services {
+    background-color: #fcfbb6;
+}
+#bottomCallOut {
+    background-color: #4fb9ff;
+    color: #000;
+}
+
+#bottomCallOut h2, #bottomCallOut .clearBtn{
+        color: #000;
+}
+
+table tbody td, table tr td {
+        border: #000 1px solid;
+}
+
+table {
+    background: #4fb9ff;
+    border: #000 1px solid;
+}
+table thead{
+    background: #000;
+}

@@ -3,7 +3,61 @@
     color: #f5ff05; 
 }
 
-.title{
+h1,h2,h3,h4,h5{
+        color: #f5ff05;
+}
+
+
+.title, .title h1, .title h2{
     background-color: #000;
     color: #f5ff05;
+}
+
+
+.parallax .overlay{
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+.darkParallax h1, .darkParallax h2, .darkParallax .clearBtn{
+    color: #f5ff05;
+}
+
+.quoteMark{
+    color: #f5ff05;
+}
+
+.subhead {
+    color: #f5ff05;
+}
+
+.btn.secondary{
+    background: #000;
+    color: #f5ff05;
+}
+#services {
+    background-color: #000;
+}
+
+#services h2{
+    color: #f5ff05;
+}
+#bottomCallOut {
+    background-color: #000;
+    color: #f5ff05;
+}
+
+#bottomCallOut h2, #bottomCallOut .clearBtn{
+        color: #f5ff05;
+}
+
+table tbody td, table tr td {
+        border: #f5ff05 1px solid;
+}
+
+table {
+    background: #000;
+    border: #f5ff05 1px solid;
+}
+table thead{
+    background: #000;
 }

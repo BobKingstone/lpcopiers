@@ -1,0 +1,56 @@
+﻿body {
+    background-color: #fffc78;
+}
+
+.title h1, .title h2 {
+    color:#000 ;
+}
+.title{
+    background-color: #fffa31;
+    color: #000;
+}
+
+
+.parallax .overlay{
+    background-color: rgba(254, 250, 79, 0.70);
+}
+
+.darkParallax h1, .darkParallax h2, .darkParallax .clearBtn{
+    color: #000;
+}
+
+.quoteMark{
+    color: #000;
+}
+
+.subhead {
+    color: #000;
+}
+
+.btn.secondary{
+    background: #000;
+    color: #fffc78;
+}
+#services {
+    background-color: #fcfbb6;
+}
+#bottomCallOut {
+    background-color: #fefa4f;
+    color: #000;
+}
+
+#bottomCallOut h2, #bottomCallOut .clearBtn{
+        color: #000;
+}
+
+table tbody td, table tr td {
+        border: #000 1px solid;
+}
+
+table {
+    background: #fffc78;
+    border: #000 1px solid;
+}
+table thead{
+    background: #000;
+}

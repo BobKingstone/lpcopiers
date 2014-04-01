@@ -9,15 +9,17 @@
                 </a>
             </h1>
             <ul class="six columns right">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                 @*<li>@Html.ActionLink("Services","Services","Home")</li>*@
-                <li>@Html.ActionLink("Manufacturers","Manufacturers","Home")</li>
+                @*<li>@Html.ActionLink("Manufacturers","Manufacturers","Home")</li>*@
                 @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                @Html.MvcSiteMap().Menu()
                 @Html.Partial("_LoginPartial")
                 <li><a href="#" onclick="swapStyleSheet('/Content/Accessability/standard.css')">A</a></li>
-                <li><a href="#" onclick="swapStyleSheet('/Content/Accessability/HighContrast.css')" id="HighVisLink">A</a></li>
-                <li><a href="#" onclick="swapStyleSheet('/Content/Accessability/darkBackground.css')" id="darkLink">A</a></li>
+                <li><a href="#" onclick="swapStyleSheet('/Content/Accessability/yellowBackground.css')" id="yellowBGLink">A</a></li>
+                <li><a href="#" onclick="swapStyleSheet('/Content/Accessability/BlueBackground.css')" id="darkLink">A</a></li>
+                <li><a href="#" onclick="swapStyleSheet('/Content/Accessability/HighContrast.css')" id="HighVisLink">A</a></li> 
             </ul>
         </div>
     </nav>

@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5 {
 }
 /*suppliers home page */
 #suppliers {
-    background-color: #6c6262;
+    /*background-color: #6c6262;*/
 }
 
     #suppliers ul li {
@@ -328,11 +328,19 @@ h1, h2, h3, h4, h5 {
 }
 
 #darkLink{
-    background-color: #050483;
-    color: #fff;
+    background-color: rgba(112, 185, 239, 0.850);
+    color: #000;
 }
 
 #darkLink:hover{
     color: #050483;
     background-color: #fff;
+}
+
+#yellowBGLink{
+    background-color: #fffc78;
+}
+#yellowBGLink:hover{
+    background-color: #fff;
+    color: #000;
 }

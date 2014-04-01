@@ -14,17 +14,13 @@ function swapStyleSheet(sheet) {
 }
 
 function setCookie(sheet) {
-    $.cookie('style', sheet, { expires: 7 });
+    //delete cookie first to ensure duplicates are not stored
+    $.removeCookie('style');
+    $.cookie('style', sheet, { expires: 7, path:'/' });
 }
-
 
 function getCookie() {
     var cookieValue = $.cookie('style');
 
     return cookieValue;
 }
-//var d = new Date();
-//d.setTime(d.getTime() + (exdays * 7));
-//var expires = "expires=" + d.toGMTString();
-//var name = "style=" + sheet + ";";
-//document.cookie = name + expires;
