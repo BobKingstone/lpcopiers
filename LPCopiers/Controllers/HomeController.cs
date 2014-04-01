@@ -48,30 +48,36 @@ namespace LPCopiers.Controllers
                 var customerEmail = cf.Email;
                 var customerRequest = cf.VisitType;
                 var errorMessage = "";
-                try
-                {
-                    // Initialize WebMail helper
-                    WebMail.SmtpServer = "mail.uglygekko.co.uk";
-                    WebMail.SmtpPort = 25;
-                    WebMail.UserName = "lpcopiersSample@uglygekko.co.uk";
-                    WebMail.Password = "ISI.JegOX.(S";
-                    WebMail.From = "lpcopiersSample@uglygekko.co.uk";
-
-                    // Send email
-                    WebMail.Send(to: "robert.kingstone@gmail.com",
-                        subject: customerRequest + " Request",
-                        body: "Thank you for your email, a member of our staff will contact you shortly to confirm the date."
-                    );
-                }
-                catch (Exception ex)
-                {
-                    errorMessage = ex.Message;
-                }
+                errorMessage = SendMail(customerRequest, errorMessage);
                 return RedirectToAction("ThankYou","Home",customerRequest);
             }
 
             ViewBag.Message = "Error";
             return View();
+        }
+
+        private static string SendMail(string customerRequest, string errorMessage)
+        {
+            try
+            {
+                // Initialize WebMail helper
+                WebMail.SmtpServer = "mail.uglygekko.co.uk";
+                WebMail.SmtpPort = 25;
+                WebMail.UserName = "lpcopiersSample@uglygekko.co.uk";
+                WebMail.Password = "ISI.JegOX.(S";
+                WebMail.From = "lpcopiersSample@uglygekko.co.uk";
+
+                // Send email
+                WebMail.Send(to: "robert.kingstone@gmail.com",
+                    subject: customerRequest + " Request",
+                    body: "Thank you for your email, a member of our staff will contact you shortly to confirm the date."
+                );
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+            }
+            return errorMessage;
         }
 
         public ActionResult ThankYou(string cr)

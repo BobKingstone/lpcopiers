@@ -68,8 +68,7 @@ namespace LPCopiers.Controllers
 
         //
         // GET: /Account/Register
-
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             ViewBag.Header = "Register";
@@ -81,8 +80,8 @@ namespace LPCopiers.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)
@@ -222,7 +221,6 @@ namespace LPCopiers.Controllers
         // POST: /Account/ExternalLogin
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
@@ -266,7 +264,6 @@ namespace LPCopiers.Controllers
         // POST: /Account/ExternalLoginConfirmation
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)
         {
@@ -317,7 +314,6 @@ namespace LPCopiers.Controllers
             return View();
         }
 
-        [AllowAnonymous]
         [ChildActionOnly]
         public ActionResult ExternalLoginsList(string returnUrl)
         {

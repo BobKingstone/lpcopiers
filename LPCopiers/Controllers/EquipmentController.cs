@@ -17,7 +17,7 @@ namespace LPCopiers.Controllers
 
         //
         // GET: /Equipment/
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             ViewBag.Header = "Equipment";

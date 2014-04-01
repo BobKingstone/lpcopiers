@@ -6,58 +6,57 @@
 
 @{Html.RenderPartial("_header");}
 
-<p>
-    @Html.ActionLink("Register", "../Account/Register")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.engRef)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.surname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.forename)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.area)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.contact)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="twelve columns">
+        <p>
+            @Html.ActionLink("Create New", "../Account/Register",null,null,new {@class = "medium primary btn" })
+        </p>
+        <table class="rounded">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.forename)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.area)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.contact)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.forename)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.contact)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.UserId }, new { @class = "medium primary btn" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.UserId }, new { @class = "medium danger btn" })
+                    </td>
+                </tr>
+            }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.engRef)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.surname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.forename)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.area)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.contact)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
+    </div>
+</div>

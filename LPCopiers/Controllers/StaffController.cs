@@ -48,44 +48,57 @@ namespace LPCopiers.Controllers
 
             if(ModelState.IsValid)
             {
-                switch (m.rate)
-                {
-                    case "Engineer":
-                        rate = 10;
-                        break;
-                    case "Senior Engineer":
-                        rate = 12;
-                        break;
-                    case "Technical Engineer":
-                        rate = 25;
-                        break;
-                    default:
-                        rate = 30;
-                        break;
-                }
-                if (m.Beng == true)
-                    rate = rate + (rate * 0.1);
-
-                if (m.hours > 40)
-                {
-                    overtimeHours = (int)m.hours - 40;
-                    m.hours = 40;
-                    overtimeRate = rate * 1.5;
-                    overtimePay = overtimeHours * overtimeRate;
-                }
-
-                m.wage = m.hours * rate;
-
-                if (overtimeHours > 0)
-                    m.wage = m.wage + overtimePay;
-                //added to reset value
-                m.hours += overtimeHours;
+                calculateWage(m, ref rate, ref overtimeHours, ref overtimeRate, ref overtimePay);
 
                 return RedirectToAction("Wage",m);
             }
 
             return View();
             
+        }
+
+        //calculate wage and return value
+        private static void calculateWage(WageCalculator m, ref double rate, ref int overtimeHours, ref double overtimeRate, ref double overtimePay)
+        {
+            rate = setRate(m, rate);
+            if (m.Beng == true)
+                rate = rate + (rate * 0.1);
+
+            if (m.hours > 40)
+            {
+                overtimeHours = (int)m.hours - 40;
+                m.hours = 40;
+                overtimeRate = rate * 1.5;
+                overtimePay = overtimeHours * overtimeRate;
+            }
+
+            m.wage = m.hours * rate;
+
+            if (overtimeHours > 0)
+                m.wage = m.wage + overtimePay;
+            //added to reset value
+            m.hours += overtimeHours;
+        }
+
+        //check job description and set rate accordingly
+        private static double setRate(WageCalculator m, double rate)
+        {
+            switch (m.rate)
+            {
+                case "Engineer":
+                    rate = 10;
+                    break;
+                case "Senior Engineer":
+                    rate = 12;
+                    break;
+                case "Technical Engineer":
+                    rate = 25;
+                    break;
+                default:
+                    rate = 30;
+                    break;
+            }
+            return rate;
         }
 
         /// <summary>
@@ -106,6 +119,7 @@ namespace LPCopiers.Controllers
 
             return RedirectToAction("WageCalculator");
         }
+
 
         public ActionResult PartsRequest ()
         {
@@ -144,8 +158,6 @@ namespace LPCopiers.Controllers
                         {
                             fileName = "eng" + DateTime.Now.ToString("ddMMyyyy");
                         }
-
-                        //TODO:: - change engineer eng001 to current user engref
                         
                         var path = Path.Combine(Server.MapPath("~/App_Data/uploads/"), fileName);
                         file.SaveAs(path);

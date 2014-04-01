@@ -12,6 +12,9 @@ namespace LPCopiers
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery.cookie.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/globalize").Include(
+                        "~/Scripts/globalize/globalize.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 

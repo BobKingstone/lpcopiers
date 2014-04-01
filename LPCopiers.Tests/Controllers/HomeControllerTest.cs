@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LPCopiers;
 using LPCopiers.Controllers;
+using LPCopiers.Models;
 
 namespace LPCopiers.Tests.Controllers
 {
@@ -22,7 +23,7 @@ namespace LPCopiers.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Modify this template to jump-start your ASP.NET MVC application.", result.ViewBag.Message);
+            Assert.AreEqual("Providing cost effective copier and printer repair solutions", result.ViewBag.Heading);
         }
 
         [TestMethod]
@@ -39,7 +40,7 @@ namespace LPCopiers.Tests.Controllers
         }
 
         [TestMethod]
-        public void Contact()
+        public void ContactBeforefive()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -50,5 +51,69 @@ namespace LPCopiers.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void ContactAfterFive()
+        {
+            HomeController controller = new HomeController();
+
+            ViewResult result = controller.OutOfHours() as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ThankYou()
+        {
+            HomeController controller = new HomeController();
+
+            ViewResult result = controller.ThankYou("Message") as ViewResult;
+
+            Assert.AreEqual("Message", result.ViewBag.Request);
+
+        }
+
+        [TestMethod]
+        public void Manufacturers()
+        {
+            HomeController controller = new HomeController();
+
+            ViewResult result = controller.Manufacturers() as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ManufacturersPost()
+        {
+            HomeController controller = new HomeController();
+
+            Manufacture m = new Manufacture();
+            m.Photocopier = "Canon";
+            m.Printer = "HP";
+            m.Fax = "Ricoh";
+
+            string contents = "http://www.canon.co.uk/For_Work/business-products/office-printers/all-in-one-office-printers/index.aspx";
+
+            ViewResult result = controller.Manufacturers(m) as ViewResult;
+
+            Assert.AreEqual(contents, m.CopierURL);
+        }
+
+        [TestMethod]
+        public void SelectedManufacturers()
+        {
+            HomeController controller = new HomeController();
+
+            Manufacture m = new Manufacture();
+            m.Photocopier = "Canon";
+            m.Printer = "HP";
+            m.Fax = "Ricoh";
+
+            ViewResult result = controller.SelectedManufacturers(m) as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
+
     }
 }

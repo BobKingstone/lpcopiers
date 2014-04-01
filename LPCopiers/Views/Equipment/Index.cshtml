@@ -15,9 +15,6 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.EngRef)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.serialNo)
                     </th>
                     <th>
@@ -43,9 +40,6 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EngRef)
-                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.serialNo)
                     </td>
