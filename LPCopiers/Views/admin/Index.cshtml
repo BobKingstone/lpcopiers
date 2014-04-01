@@ -8,59 +8,65 @@
 @{Html.RenderPartial("_AdminMenu");}
 
 <div class="row">
-    <div class="four columns">
+    <div class="three columns push_one">
         <div class="adminInfoPanel">
-                <div class="smallChart">
-                    <canvas id="chart4" width="100" height="100"></canvas>
-                </div>
                 <div class="chartInfo">
                     <ul>
-                        <li>Unique Visitors</li>
-                        <li>300</li>
+                        <li class="adminInfoPanelTop">Unique Visitors</li>
+                        <li>100</li>
                     </ul>
                 </div>
         </div>
     </div>
-    <div class="four columns">
+    <div class="three columns">
         <div class="adminInfoPanel">
-            <div class="smallChart">
-                <canvas id="chart4" width="100" height="100"></canvas>
-            </div>
             <div class="chartInfo">
                 <ul>
-                    <li>Uploaded Parts Request</li>
-                    <li>10</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="four columns">
-        <div class="adminInfoPanel">
-            <div class="smallChart">
-                <canvas id="chart4" width="100" height="100"></canvas>
-            </div>
-            <div class="chartInfo">
-                <ul>
-                    <li>Unique Visitors</li>
+                    <li class="adminInfoPanelTop">Visitors Today</li>
                     <li>300</li>
                 </ul>
             </div>
         </div>
     </div>
+    <div class="three columns">
+        <div class="adminInfoPanel">
+            <div class="chartInfo">
+                <ul>
+                    <li class="adminInfoPanelTop">Uploaded Parts Request</li>
+                    <li>10</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-
+<div class="row">
+    <div class="twelve columns centered" >
+        <h2>Visitors this Year</h2>
+        <ul>
+            <li>Mobile Users <i class=" icon-mobile mobUsers" ></i></li>
+            <li>Desktop Users <i class="icon-monitor desUsers" ></i></li>
+        </ul>
+    </div>
+</div>
 <div class="row">
     <div class="Twelve columns">
-        <canvas id="chart1" width="800" height="200"></canvas>
+        <canvas id="chart1" width="800" height="300"></canvas>
     </div>
 </div>
 
 <div class="row">
-    <div class="twelve columns">
-        Other info here
+    <div class="twelve columns" >
+        <div class="messages">
+            <ul>
+                <li><i class="icon-user"></i>Eng001 - uploaded parts request</li>
+                <li><i class="icon-comment"></i>You have a new contact request</li>
+            </ul>
+        </div>
+
     </div>
 </div>
+
     @*<div class="row">
         <div class="four columns">
             <canvas id="chart3" width="300" height="300"></canvas>
@@ -86,7 +92,7 @@
         //var ctx3 = $("#chart3").get(0).getContext("2d");
         //var myNewChart = new Chart(ctx3).Radar(chart3);
 
-        var ctx4 = $("#chart4").get(0).getContext("2d");
-        var myNewChart = new Chart(ctx4).Doughnut(chart4);
+        //var ctx4 = $("#chart4").get(0).getContext("2d");
+        //var myNewChart = new Chart(ctx4).Doughnut(chart4);
     </script>
 }
