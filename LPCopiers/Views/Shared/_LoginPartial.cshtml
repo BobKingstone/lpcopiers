@@ -10,5 +10,5 @@
         }
     </text>
 } else {
-        <li class="login">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li class="login">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="switch", data_trigger="#loginModal" })</li>
 }

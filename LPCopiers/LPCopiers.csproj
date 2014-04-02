@@ -303,7 +303,6 @@
     <Content Include="Images\suppliers\epson_Logo.jpg" />
     <Content Include="Images\suppliers\ricoh_Logo.gif" />
     <Content Include="Images\suppliers\xerox_Logo.jpg" />
-    <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.am-ET.js" />
@@ -756,6 +755,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\Shared\_loginModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">

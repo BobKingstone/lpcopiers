@@ -1,0 +1,41 @@
+﻿@model LPCopiers.Models.LoginModel
+
+<div class="modal" id="loginModal">
+    <div class="content">
+        <a class="close switch" data-trigger="|#loginModal"><i class="icon-cancel" /></i></a>
+        <div class="row">
+            <div class="ten columns centered text-center">
+                @using (Html.BeginForm("Login","Account",new { ReturnUrl = ViewBag.ReturnUrl }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <legend>Log in Form</legend>
+                        <ul>
+                            <li class="field">
+                                @Html.LabelFor(m => m.UserName)
+                                @Html.TextBoxFor(m => m.UserName, new { @class="narrow text input"})
+                                @Html.ValidationMessageFor(m => m.UserName)
+                            </li>
+                            <li class="field">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password, new { @class = "narrow password input" })
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </li>
+                            <li>
+                                <label class="checkbox" for="remeberme">
+                                    <span></span>
+                                    @Html.CheckBoxFor(m => m.RememberMe, new { @id = "rememberme" })
+                                    Remember Me?
+                                </label>
+
+                            </li>
+                        </ul>
+                        <input type="submit" value="Log in" class="medium secondary btn" />
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+</div>
