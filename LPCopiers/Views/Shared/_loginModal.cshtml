@@ -1,10 +1,13 @@
 ﻿@model LPCopiers.Models.LoginModel
 
+
 <div class="modal" id="loginModal">
     <div class="content">
         <a class="close switch" data-trigger="|#loginModal"><i class="icon-cancel" /></i></a>
         <div class="row">
             <div class="ten columns centered text-center">
+                <p>@Html.ActionLink("Forgotten Password ?", "LostPassword", "Account")</p>
+
                 @using (Html.BeginForm("Login","Account",new { ReturnUrl = ViewBag.ReturnUrl }))
                 {
                     @Html.AntiForgeryToken()
@@ -35,6 +38,7 @@
                         <input type="submit" value="Log in" class="medium secondary btn" />
                     </fieldset>
                 }
+
             </div>
         </div>
     </div>

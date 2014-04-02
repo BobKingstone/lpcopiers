@@ -19,7 +19,8 @@ namespace LPCopiers.Models
         public int UserId { get; set; }
         
         public string UserName { get; set; }
-        public string engRef { get; set; }
+
+        public string email { get; set; }
         public string surname { get; set; }
         public string forename { get; set; }
         public string area { get; set; }
@@ -86,8 +87,15 @@ namespace LPCopiers.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
-        public string engRef { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name="Email")]
+        public string email { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        [Compare("Email",ErrorMessage="The Emails do not match")]
+        public string CompareEmail { get; set; }
         public string surname { get; set; }
         public string forename { get; set; }
         public string area { get; set; }

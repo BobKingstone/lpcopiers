@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using LPCopiers.Filters;
 using LPCopiers.Models;
+using System.Web.Mail;
+using System.Web.Helpers;
 
 namespace LPCopiers.Controllers
 {
@@ -89,7 +91,7 @@ namespace LPCopiers.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Surname= model.surname, Forename=model.forename, Area=model.area, Contact=model.contact});//model.surname, model.forename,model.area, model.contact);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Email=model.email, Surname= model.surname, Forename=model.forename, Area=model.area, Contact=model.contact});//model.surname, model.forename,model.area, model.contact);
 
                     WebSecurity.Login(model.UserName, model.Password);
 
@@ -216,6 +218,107 @@ namespace LPCopiers.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        [AllowAnonymous]
+        public ActionResult LostPassword()
+        {
+            ViewBag.Header = "Reset Account";
+            ViewBag.SubHeader = "Request password email request";
+            return View();
+        }
+
+        /// <summary>
+        /// password reset
+        /// code used form:
+        /// http://www.dominikgorecki.com/2014/01/implementing-password-reset-in-mvc-4-ef-code-first-using-simple-membership-part-2/
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult LostPassword(LostPasswordModel m)
+        {
+            if(ModelState.IsValid)
+            {
+                MembershipUser user;
+                using (var db = new UsersContext())
+                {
+                    var username = (from u in db.UserProfiles
+                                         where u.email == m.Email
+                                         select u.UserName).FirstOrDefault();
+                    if(username != null)
+                    {
+                        user = Membership.GetUser(username.ToString());
+                    }
+                    else
+                    {
+                        user = null;
+                    }
+
+                    if( user!=null)
+                    {
+                        var token = WebSecurity.GeneratePasswordResetToken(user.UserName);
+                        
+                        string resetLink = "<a href='"
+                                         + Url.Action("ResetPassword", "Account", new { rt = token }, "http")
+                                         + "'>Reset Password Link</a>";
+                        var errormessage = "";
+                        try{
+                                        // Initialize WebMail helper
+                                WebMail.SmtpServer = "mail.uglygekko.co.uk";
+                                WebMail.SmtpPort = 25;
+                                WebMail.UserName = "lpcopiersSample@uglygekko.co.uk";
+                                WebMail.Password = "ISI.JegOX.(S";
+                                WebMail.From = "lpcopiersSample@uglygekko.co.uk";
+
+                                // Send email
+                                WebMail.Send(to: "robert.kingstone@gmail.com",
+                                    subject: "Reset password for LP Copiers",
+                                    body: "click or copy link address to address bar: " + resetLink
+                                );
+                                ViewBag.Message = "Success";
+                                return View(m);
+                        }
+                        catch (Exception ex)
+                        {
+                            errormessage = ex.Message;
+                        }
+
+                    }
+                }
+            }
+            return View(m);
+        }
+
+        [AllowAnonymous]
+        public ActionResult ResetPassword(string rt)
+        {
+            ResetPasswordModel m = new ResetPasswordModel();
+            m.ReturnToken = rt;
+            return View(m);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPassword(ResetPasswordModel m)
+        {
+            if(ModelState.IsValid)
+            {
+                bool resetResponse = WebSecurity.ResetPassword(m.ReturnToken, m.password);
+                if(resetResponse)
+                {
+                    ViewBag.Message = "Successfully Changed";
+                }
+                else
+                {
+                    ViewBag.Message = "There was an error please contact administrator";
+                }
+            }
+            return View(m);
+        }
+
 
         //
         // POST: /Account/ExternalLogin

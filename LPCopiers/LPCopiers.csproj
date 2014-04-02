@@ -218,11 +218,17 @@
     <Compile Include="Migrations\201403271118222_EquipmentTable.Designer.cs">
       <DependentUpon>201403271118222_EquipmentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404021849360_addedStaffEmail.cs" />
+    <Compile Include="Migrations\201404021849360_addedStaffEmail.Designer.cs">
+      <DependentUpon>201404021849360_addedStaffEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\Equipment.cs" />
+    <Compile Include="Models\LostPasswordModel.cs" />
     <Compile Include="Models\Manufacture.cs" />
+    <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Models\WageCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -756,6 +762,8 @@
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Views\Shared\_loginModal.cshtml" />
+    <Content Include="Views\Account\LostPassword.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403221330483_UserProfiles.resx">
@@ -769,6 +777,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201403271118222_EquipmentTable.resx">
       <DependentUpon>201403271118222_EquipmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404021849360_addedStaffEmail.resx">
+      <DependentUpon>201404021849360_addedStaffEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

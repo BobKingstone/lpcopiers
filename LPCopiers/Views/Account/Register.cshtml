@@ -30,6 +30,16 @@
                         @Html.ValidationMessageFor(m => m.ConfirmPassword)
                     </li>
                     <li>
+                        @Html.LabelFor(m => m.email)
+                        @Html.TextBoxFor(m => m.email)
+                        @Html.ValidationMessageFor(m => m.email)
+                    </li>
+                    <li>
+                        @Html.LabelFor(m => m.CompareEmail)
+                        @Html.TextBoxFor(m => m.CompareEmail)
+                        @Html.ValidationMessageFor(m => m.CompareEmail)
+                    </li>
+                    <li>
                         @Html.LabelFor(m => m.surname)
                         @Html.TextBoxFor(m=>m.surname)
                         @Html.ValidationMessageFor(m => m.surname)

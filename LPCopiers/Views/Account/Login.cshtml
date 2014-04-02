@@ -15,7 +15,7 @@
 
             <fieldset>
                 <legend>Log in Form</legend>
-                <ol>
+                <ul>
                     <li>
                         @Html.LabelFor(m => m.UserName)
                         @Html.TextBoxFor(m => m.UserName)
@@ -34,10 +34,14 @@
                         </label>
                         
                     </li>
-                </ol>
+                    <li>
+                        <p>@Html.ActionLink("Forgotten Password ?", "LostPassword", "Account")</p>                        
+                    </li>
+                </ul>
                 <input type="submit" value="Log in" class="medium secondary btn" />
             </fieldset>
         }
+
         </section>
     </div>
 </div>

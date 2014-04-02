@@ -60,8 +60,8 @@ namespace LPCopiers.Migrations
 
             var userprofile = new List<UserProfile>
             {
-                new UserProfile { UserName="Eng001", surname="Bloggs", forename="Fred", area="Wrexham", contact="234433"},
-                new UserProfile { UserName="Eng002", surname="Jones", forename="John", area="Liverpool", contact="3243245"}
+                new UserProfile { UserName="Eng001", email="robert.kingstone@gmail.com", surname="Bloggs", forename="Fred", area="Wrexham", contact="234433"},
+                new UserProfile { UserName="Eng002", email="robert.kingstone@gmail.com",surname="Jones", forename="John", area="Liverpool", contact="3243245"}
             };
 
             userprofile.ForEach(s => context.UserProfiles.AddOrUpdate(p => p.UserName, s));
