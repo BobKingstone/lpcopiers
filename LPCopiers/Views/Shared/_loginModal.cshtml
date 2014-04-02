@@ -4,8 +4,10 @@
 <div class="modal" id="loginModal">
     <div class="content">
         <a class="close switch" data-trigger="|#loginModal"><i class="icon-cancel" /></i></a>
+
         <div class="row">
             <div class="ten columns centered text-center">
+                <h1 class="modalHeader centered">Login</h1>
                 <p>@Html.ActionLink("Forgotten Password ?", "LostPassword", "Account")</p>
 
                 @using (Html.BeginForm("Login","Account",new { ReturnUrl = ViewBag.ReturnUrl }))
