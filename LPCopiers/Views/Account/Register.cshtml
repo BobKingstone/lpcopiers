@@ -13,7 +13,7 @@
 
             <fieldset>
                 <legend>Registration Form</legend>
-                <ol>
+                <ul>
                     <li>
                         @Html.LabelFor(m => m.UserName)
                         @Html.TextBoxFor(m => m.UserName)
@@ -34,11 +34,11 @@
                         @Html.TextBoxFor(m => m.email)
                         @Html.ValidationMessageFor(m => m.email)
                     </li>
-                    <li>
+                    @*<li>
                         @Html.LabelFor(m => m.CompareEmail)
                         @Html.TextBoxFor(m => m.CompareEmail)
                         @Html.ValidationMessageFor(m => m.CompareEmail)
-                    </li>
+                    </li>*@
                     <li>
                         @Html.LabelFor(m => m.surname)
                         @Html.TextBoxFor(m=>m.surname)
@@ -54,13 +54,13 @@
                         @Html.TextBoxFor(m=>m.contact)
                         @Html.ValidationMessageFor(m => m.contact)
                     </li>
-                </ol>
+                </ul>
                 <input type="submit" value="Register" class="medium secondary btn"/>
             </fieldset>
         }
     </div>
 </div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 

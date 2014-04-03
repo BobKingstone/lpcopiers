@@ -12,12 +12,19 @@ namespace LPCopiers.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int EquipmentID { get; set; }
+        [Required]
         public string EngRef { get; set; }
+        [Required]
         public string serialNo { get; set; }
+        [Required]
         public string Make { get; set; }
+        [Required]
         public string Model { get; set; }
+        [Required]
         public string Company { get; set; }
+        [Required]
         public string Contact { get; set; }
+        [Required]
         public string Location { get; set; }
 
         public virtual UserProfile Engineer { get; set; }

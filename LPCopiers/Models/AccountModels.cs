@@ -91,11 +91,6 @@ namespace LPCopiers.Models
         [DataType(DataType.EmailAddress)]
         [Display(Name="Email")]
         public string email { get; set; }
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email")]
-        [Compare("Email",ErrorMessage="The Emails do not match")]
-        public string CompareEmail { get; set; }
         public string surname { get; set; }
         public string forename { get; set; }
         public string area { get; set; }

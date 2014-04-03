@@ -30,7 +30,7 @@ namespace LPCopiers.Controllers
             ViewBag.Header = "Contact Us";
             ViewBag.SubHeader = "Request a visit from an engineer";
             ViewBag.OutofHours = false;
-            int CurrentHour = DateTime.Now.Hour;
+            int CurrentHour = 11;// DateTime.Now.Hour;
             if (CurrentHour < 9 || CurrentHour > 17)
             {
                 return RedirectToAction("OutOfHours");

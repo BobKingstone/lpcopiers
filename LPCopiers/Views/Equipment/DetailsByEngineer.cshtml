@@ -11,30 +11,33 @@
             @Html.ActionLink("Create New", "Create", null, null, new { @class = "medium primary btn" })
         </p>
         <table class="rounded">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.EngRef)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.serialNo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Make)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Model)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Company)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Contact)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Location)
-                </th>
-                <th></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EngRef)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.serialNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Make)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Model)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Company)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
 
             @foreach (var item in Model)
             {
@@ -61,8 +64,8 @@
                         @Html.DisplayFor(modelItem => item.Location)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.EquipmentID, @class="medium primary btn"}) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.EquipmentID, @class="medium danger btn"})
+                        @Html.ActionLink("Edit", "Edit", new { @id = item.EquipmentID}, new{@class="medium primary btn"}) |
+                        @Html.ActionLink("Delete", "Delete", new { @id = item.EquipmentID}, new{@class="medium danger btn"})
                     </td>
                 </tr>
             }
@@ -71,3 +74,6 @@
 
     </div>
 </div>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>

@@ -8,63 +8,43 @@
     <div class="twelve columns">
         <h2>Are you sure you want to delete this?</h2>
         <fieldset>
-            <legend>Equipment</legend>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.EngRef)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.EngRef)
-            </div>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.serialNo)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.serialNo)
-            </div>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.Make)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Make)
-            </div>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.Model)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Model)
-            </div>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.Company)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Company)
-            </div>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.Contact)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Contact)
-            </div>
-
-            <div class="display-label">
-                @Html.DisplayNameFor(model => model.Location)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Location)
-            </div>
-        </fieldset>
+            <legend>Delete Record</legend>
+            <ul>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.EngRef)</strong>
+                    @Html.DisplayFor(model => model.EngRef)
+                </li>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.serialNo)</strong>
+                    @Html.DisplayFor(model => model.serialNo)
+                </li>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.Make)</strong>
+                    @Html.DisplayFor(model => model.Make)
+                </li>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.Model)</strong>
+                    @Html.DisplayFor(model => model.Model)
+                </li>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.Company)</strong>
+                    @Html.DisplayFor(model => model.Company)
+                </li>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.Contact)</strong>
+                    @Html.DisplayFor(model => model.Contact)
+                </li>
+                <li>
+                    <strong>@Html.DisplayNameFor(model => model.Location)</strong>
+                    @Html.DisplayFor(model => model.Location)
+                </li>
+            </ul>
+            </fieldset>
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
             <p>
-                <input type="submit" value="Delete" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Delete" class="medium danger btn"/>
             </p>
         }
     </div>
