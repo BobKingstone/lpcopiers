@@ -43,7 +43,14 @@ namespace LPCopiers.Controllers
         public ActionResult Contact(ContactForm cf)
         {
             if(ModelState.IsValid)
-            {
+            {   //model validation work around
+                var datePlusSeven = DateTime.Now.AddDays(7);
+                var datePlusNinety = DateTime.Now.AddDays(90);
+                if(cf.VisitDate < datePlusSeven || cf.VisitDate>datePlusNinety)
+                {
+                    ViewBag.DateError = "Invalid visit date selected";
+                    return View();
+                }
                 var customerName = cf.CName;
                 var customerEmail = cf.Email;
                 var customerRequest = cf.VisitType;

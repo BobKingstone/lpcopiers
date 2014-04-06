@@ -101,9 +101,11 @@
                     </li>
 
                     <li class=" field">
+
                         @Html.LabelFor(model => model.VisitDate) 
                         @*@Html.TextBoxFor(model => model.VisitDate, new { @id="visitDate", @placeholder="mm/dd/yyyy" })*@
                         @Html.TextBoxFor(model => model.VisitDate, "{0:dd/MM/yyyy}", new { @id = "visitDate", placeholder = "dd/mm/yyyy", @class = " narrow text input" })
+                        <span class="field-validation-error">@ViewBag.DateError</span>
                         @Html.ValidationMessageFor(model => model.VisitDate)
                         <p>Date must be between <strong>@DateTime.Now.AddDays(7).ToShortDateString() </strong> and <strong>@DateTime.Now.AddDays(90).ToShortDateString()</strong></p>
                     </li>
